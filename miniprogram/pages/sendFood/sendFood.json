@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "tabBar":"/components/tabBar/tabBar",
+    "foodItem":"/components/foodItem/foodItem"
+  },
+  "navigationBarTitleText":"外卖推荐"
+}

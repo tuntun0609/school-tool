@@ -1,0 +1,17 @@
+<!-- components/tabBar/tabBar.wxml -->
+<view class="tabBar">
+  <view class="tabBar-list">
+    <view class="index tabBar-item" bindtap="indexClick">
+      <image src="/images/首页.png" class="tabBar-img"/>
+      <!-- <view class="text">首页</view> -->
+    </view>
+    <view class="notice tabBar-item" bindtap="noticeClick">
+      <image src="/images/消息1.png" class="tabBar-img"/>
+      <!-- <view class="text">公告</view> -->
+    </view>
+    <view class="user tabBar-item" bindtap="userClick">
+      <image src="/images/个人中心-我的.png" class="tabBar-img"/>
+      <!-- <view class="text">个人中心</view> -->
+    </view>
+  </view>
+</view>

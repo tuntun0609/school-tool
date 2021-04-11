@@ -1,0 +1,5 @@
+/* miniprogram/pages/index/index.wxss */
+swiper {
+  padding: 30rpx;
+  /* border-radius: 20rpx; */
+}

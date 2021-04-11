@@ -1,0 +1,11 @@
+<!--components/foodList/foodItem.wxml-->
+<view class="sendFood-item">
+    <image class="sendFood-img" src="{{items.img}}" />
+    <view class="sendFood-msg">
+      <view class="sendFood-title">{{items.title}}</view>
+      <view class="sendFood-tag">{{items.tag}}</view>
+    </view>
+    <navigator class="sendFood-dec">
+      <image class="sendFood-next" src="/images/箭头.png" />
+    </navigator>
+  </view>

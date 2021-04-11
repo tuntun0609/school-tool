@@ -1,0 +1,43 @@
+/* components/foodList/foodItem.wxss */
+
+.sendFood-item{
+  width: 600rpx;
+  background-color: #fff;
+  /* border: solid 1rpx #4a69bd; */
+  border-radius: 20rpx;
+  box-shadow: 0 0 10rpx 0 rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 30rpx 30rpx;
+  margin-top: 30rpx;
+}
+
+.sendFood-item .sendFood-img{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 20rpx;
+}
+
+.sendFood-item .sendFood-msg{
+  width: 500rpx;
+  margin-left: 25rpx;
+}
+
+.sendFood-item .sendFood-title{
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #192a56;
+  margin-bottom: 6rpx;
+  
+}
+
+.sendFood-item .sendFood-tag{
+  font-size: 30rpx;
+  color: #192a56;
+}
+
+.sendFood-dec .sendFood-next{
+  width: 40rpx;
+  height: 40rpx;
+}

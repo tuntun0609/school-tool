@@ -1,0 +1,21 @@
+<!-- pages/sendFood/sendFood.wxml -->
+<view class="sendFood-list">
+  <!-- 公告 -->
+  <view class="sendFood-notice">本页面所收集的是南校可送进校外卖店铺以及校内外卖平台，点击可查看详情</view>
+  <!-- 店铺列表 -->
+  
+  <foodItem class="foodItem" items="{{item}}"></foodItem>
+
+  <foodItem class="foodItem" items="{{item}}"></foodItem>
+
+  <foodItem class="foodItem" items="{{item}}"></foodItem>
+
+  <foodItem class="foodItem" items="{{item}}"></foodItem>
+
+  <foodItem class="foodItem" items="{{item}}"></foodItem>
+
+  <foodItem class="foodItem" items="{{item}}"></foodItem>
+
+  <foodItem class="foodItem" items="{{item}}"></foodItem>
+</view>
+<tabBar></tabBar>

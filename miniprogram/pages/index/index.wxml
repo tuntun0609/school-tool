@@ -1,7 +1,7 @@
 <!--miniprogram/pages/index/index.wxml-->
 <view class="index-main">
   <!-- 轮播图 -->
-  <swiper indicator-dots class="index-swiper">
+  <swiper indicator-dots class="index-swiper" autoplay="{{true}}">
     <swiper-item>
       <image class="swiper-img" src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" />
     </swiper-item>
@@ -14,6 +14,8 @@
   </swiper>
 
   <!-- 模块 -->
+
+  <!-- 第一行 -->
   <view class="index-list">
 
     <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="水电查询"></indexItem>
@@ -23,7 +25,7 @@
     <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="图书馆"></indexItem>
 
   </view>
-
+  <!-- 第二行 -->
   <view class="index-list">
 
     <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="地图"></indexItem>
@@ -33,7 +35,7 @@
     <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="宣传申请"></indexItem>
 
   </view>
-
+  <!-- 第三行 -->
   <view class="index-list">
     <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="场地预约"></indexItem>
 

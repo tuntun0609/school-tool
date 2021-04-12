@@ -10,6 +10,12 @@ swiper{
 	/* border-radius: 100rpx; */
 }
 
+swiper-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .swiper-img{
   width: 750rpx;
 }
@@ -20,22 +26,4 @@ swiper{
   margin-top: 30rpx;
   display: flex;
   justify-content: space-between;
-}
-
-.index-item{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.index-item .indexItem-img{
-  width: 120rpx;
-  height: 120rpx;
-  border-radius: 20rpx;
-  margin-bottom: 10rpx;
-}
-
-.index-item .indexItem-msg{
-  color: #192a56;
 }

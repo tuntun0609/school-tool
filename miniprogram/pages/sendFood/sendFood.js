@@ -11,12 +11,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const db = wx.cloud.database();
-    db.collection("foodShop").get().then(res => {
+    wx.cloud.callFunction({
+      name:'getFoodShop'
+    }).then(res => {
       this.setData({
-        list:res.data
+        list:res.result.data
       })
-    });
+    }).catch(err => {
+      console.log(err);
+    })
   },
 
   /**

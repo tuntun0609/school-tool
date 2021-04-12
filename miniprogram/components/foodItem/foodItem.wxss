@@ -26,7 +26,7 @@
 
 .sendFood-item .sendFood-title{
   font-size: 36rpx;
-  font-weight: 600;
+  /* font-weight: 600; */
   color: #192a56;
   margin-bottom: 6rpx;
   
@@ -34,7 +34,7 @@
 
 .sendFood-item .sendFood-tag{
   font-size: 30rpx;
-  color: #192a56;
+  color: #20366d;
 }
 
 .sendFood-dec .sendFood-next{

@@ -21,9 +21,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
-  },
-  onLoad: function (options) {
-    console.log(123456);
+    foodDes:function(e){
+      wx.navigateTo({
+        url:`/pages/foodDes/foodDes?name=${this.properties.items.title}`
+      })
+    }
   },
 })

@@ -1,14 +1,48 @@
 <!--miniprogram/pages/index/index.wxml-->
-<swiper indicator-dots >
-  <swiper-item>
-    <image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" />
-  </swiper-item>
-  <swiper-item>
-    <image src="https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1819216937,2118754409&fm=26&gp=0.jpg" />
-  </swiper-item>
-  <swiper-item>
-    <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2273029747,2912173232&fm=15&gp=0.jpg" />
-  </swiper-item>
-</swiper>
+<view class="index-main">
+  <!-- 轮播图 -->
+  <swiper indicator-dots class="index-swiper">
+    <swiper-item>
+      <image class="swiper-img" src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" />
+    </swiper-item>
+    <swiper-item>
+      <image class="swiper-img" src="https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1819216937,2118754409&fm=26&gp=0.jpg" />
+    </swiper-item>
+    <swiper-item>
+      <image class="swiper-img" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2273029747,2912173232&fm=15&gp=0.jpg" />
+    </swiper-item>
+  </swiper>
+
+  <!-- 模块 -->
+  <view class="index-list">
+
+    <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="水电查询"></indexItem>
+
+    <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="外卖推荐" pageTo="sendFood"></indexItem>
+
+    <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="图书馆"></indexItem>
+
+  </view>
+
+  <view class="index-list">
+
+    <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="地图"></indexItem>
+
+    <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="讨论墙"></indexItem>
+
+    <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="宣传申请"></indexItem>
+
+  </view>
+
+  <view class="index-list">
+    <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="场地预约"></indexItem>
+
+    <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="公告栏"></indexItem>
+
+    <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="校历"></indexItem>
+
+  </view>
+</view>
+
 
 <tabBar></tabBar>

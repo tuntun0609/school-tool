@@ -1,22 +1,18 @@
-// pages/sendFood/sendFood.js
+// pages/foodDes/foodDes.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const db = wx.cloud.database();
-    db.collection("foodShop").get().then(res => {
-      this.setData({
-        list:res.data
-      })
-    });
+    console.log(options.name);
   },
 
   /**

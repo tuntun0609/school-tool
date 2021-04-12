@@ -1,5 +1,41 @@
 /* miniprogram/pages/index/index.wxss */
-swiper {
-  padding: 30rpx;
-  /* border-radius: 20rpx; */
+.index-main {
+	min-height: 100vh;
+	background-color: #f5f6fa;
+	padding-top: 20rpx;
+}
+
+swiper{
+	padding: 20rpx 40rpx;
+	/* border-radius: 100rpx; */
+}
+
+.swiper-img{
+  width: 750rpx;
+}
+
+.index-list{
+  width: 600rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.index-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.index-item .indexItem-img{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 20rpx;
+  margin-bottom: 10rpx;
+}
+
+.index-item .indexItem-msg{
+  color: #192a56;
 }

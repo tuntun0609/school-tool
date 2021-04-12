@@ -1,4 +1,5 @@
 // components/tabBar/tabBar.js
+const app = getApp();
 Component({
   /**
    * 组件的属性列表
@@ -29,9 +30,16 @@ Component({
       })
     },
     userClick:function (){
-      wx.reLaunch({
-        url: "/pages/user/user"
-      })
+      // console.log(app.globalData.userInfo);
+      if (!app.globalData.userInfo) {
+        wx.reLaunch({
+          url: "/pages/login/login"
+        })
+      }else{
+        wx.reLaunch({
+          url: "/pages/user/user"
+        })
+      }     
     }
   },
 })

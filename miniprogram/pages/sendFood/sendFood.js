@@ -11,12 +11,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '正在加载中...',
+    })
     wx.cloud.callFunction({
       name:'getFoodShop'
     }).then(res => {
       this.setData({
         list:res.result.data
       })
+      wx.hideLoading();
     }).catch(err => {
       console.log(err);
     })

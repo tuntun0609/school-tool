@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/sendFood/sendFood",
+    "pages/index/index",  
+    "pages/login/login",
     "pages/user/user",
-    "pages/index/index",
-    
+    "pages/sendFood/sendFood",
     "pages/notice/notice",
     "pages/foodDes/foodDes"
   ],

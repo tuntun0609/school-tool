@@ -24,8 +24,8 @@ Page({
           dbName:'item',
           addData:{
             openid:app.globalData.openid,
-            a:123,
-            test:456
+            title:'找雨伞',
+            msg:"ltx丢了雨伞111"
           }
         }
       }).then(res => {

@@ -7,7 +7,7 @@ exports.main = async (event, context) => {
   let dbName = event.dbName;
   let addData = event.addData;
   try{
-    cloud.database().collection(`${dbName}`).add({
+    await cloud.database().collection(`${dbName}`).add({
       data:addData
     })
     return {

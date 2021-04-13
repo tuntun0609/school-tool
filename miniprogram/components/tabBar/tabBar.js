@@ -33,7 +33,7 @@ Component({
       // console.log(app.globalData.userInfo);
       if (!app.globalData.userInfo) {
         wx.reLaunch({
-          url: "/pages/login/login"
+          url: "/pages/login/login?toPage=user"
         })
       }else{
         wx.reLaunch({

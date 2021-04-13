@@ -1,12 +1,13 @@
 /* pages/sendFood/sendFood.wxss */
+page{
+  height: 100%;
+  background-color: #f5f6fa;
+}
 
 .sendFood-list{
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
-  background-color: #f5f6fa;
   padding-top: 20rpx;
 }
 

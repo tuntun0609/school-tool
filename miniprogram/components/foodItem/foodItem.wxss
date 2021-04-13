@@ -5,7 +5,7 @@
   background-color: #fff;
   /* border: solid 1rpx #4a69bd; */
   border-radius: 20rpx;
-  box-shadow: 0 0 10rpx 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   margin: 0 auto;

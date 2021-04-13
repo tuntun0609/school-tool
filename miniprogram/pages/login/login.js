@@ -9,6 +9,7 @@ Page({
 
   },
   userLogin:async function (params) {
+    let that = this;
     wx.cloud.callFunction({
       name:'login'
     }).then(res => {
@@ -17,15 +18,15 @@ Page({
     }).catch(err => {
       console.log(err);
     })
-
     wx.getUserProfile({
       desc: '用于完善资料', 
       success: (res) => {
         // console.log(res.userInfo);
         app.globalData.userInfo = res.userInfo;
         wx.navigateTo({
-          url:"../../pages/user/user"
+          url:`../../pages/${that.options.toPage}/${that.options.toPage}`
         })
+        console.log(app.globalData);
       },
       fail: (err)=> {
         wx.showToast({
@@ -44,6 +45,7 @@ Page({
    */
   onLoad: function (options) {
     // console.log(app.globalData);
+    // console.log(options);
   },
 
   /**

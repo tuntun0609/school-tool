@@ -2,7 +2,12 @@
 <view class="container">
   <view class="userinfo">
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-    <view class="userinfo-nickname">{{userInfo.nickName}}</view>
+    <view class="userinfo-msg">
+      <view class="userinfo-nickname">{{userInfo.nickName}}</view>
+      <view class="userinfo-city">{{userInfo.city}}</view>
+    </view>
   </view>
 </view>
+
+
 <tabBar></tabBar>

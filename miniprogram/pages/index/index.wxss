@@ -1,7 +1,10 @@
 /* miniprogram/pages/index/index.wxss */
+page{
+  height: 100%;
+  background-color: #f5f6fa;
+}
+
 .index-main {
-	min-height: 100vh;
-	background-color: #f5f6fa;
 	padding-top: 20rpx;
 }
 

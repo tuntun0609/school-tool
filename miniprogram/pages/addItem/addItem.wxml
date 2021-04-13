@@ -1,0 +1,7 @@
+<button bindtap="test">test</button>
+<view class="addForm">
+  
+</view>
+
+
+<tabBar></tabBar>

@@ -1,1 +1,41 @@
 /* pages/user/user.wxss */
+page {
+	height: 100%;
+	background-color: #f5f6fa;
+}
+
+.userinfo {
+	width: 600rpx;
+	height: 250rpx;
+	margin-top: 60rpx;
+	background-color: white;
+	border-radius: 30rpx;
+	box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	padding: 50rpx;
+}
+
+.userinfo-avatar {
+	width: 150rpx;
+	height: 150rpx;
+	border-radius: 30rpx;
+}
+
+.userinfo-msg {
+  width: 320rpx;
+	color: #20366d;
+	margin-left: 30rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.userinfo-nickname {
+	font-size: 42rpx;
+	margin-bottom: 15rpx;
+}
+
+.userinfo-city {
+}

@@ -7,6 +7,9 @@
       <view class="userinfo-city">{{userInfo.city}}</view>
     </view>
   </view>
+
+  <view class="addItem-btn" bindtap="add">添 加</view>
+
 </view>
 
 

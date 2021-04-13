@@ -15,16 +15,17 @@ App({
     }
 
     this.globalData = {
-      openid: "oV9Sv4rxRwpKQEFreVWA-e4blV8w",
-      userInfo: {
-        avatarUrl: "https://thirdwx.qlogo.cn/mmopen/vi_32/uBuqV5GIGb3uDEhJphiaVJVaNHDhicZBAnrtGiauGutDpm3FQWgNrj0lQ6VgP53cMlTDcpeFRJoXQ6icL914g52pRw/132",
-        city: "Guangzhou",
-        country: "China",
-        gender: 2,
-        language: "zh_CN",
-        nickName: "吞吞",
-        province: "Guangdong"
-      }
+      
     }
+    // openid: "oV9Sv4rxRwpKQEFreVWA-e4blV8w",
+    //   userInfo: {
+    //     avatarUrl: "https://thirdwx.qlogo.cn/mmopen/vi_32/uBuqV5GIGb3uDEhJphiaVJVaNHDhicZBAnrtGiauGutDpm3FQWgNrj0lQ6VgP53cMlTDcpeFRJoXQ6icL914g52pRw/132",
+    //     city: "Guangzhou",
+    //     country: "China",
+    //     gender: 2,
+    //     language: "zh_CN",
+    //     nickName: "吞吞",
+    //     province: "Guangdong"
+    //   }
   }
 })

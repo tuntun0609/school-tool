@@ -23,8 +23,9 @@ Component({
   methods: {
     foodDes:function(e){
       wx.navigateTo({
-        url:`/pages/foodDes/foodDes?name=${this.properties.items.title}`
+        url:`/pages/foodDes/foodDes?name=${this.properties.items.shopName}`
       })
+      // console.log(this.properties.items.shopName);
     }
   },
 })

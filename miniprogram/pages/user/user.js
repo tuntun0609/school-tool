@@ -18,7 +18,17 @@ Page({
     })
     // console.log(this.data.userInfo);
   },
-  
+  add:function(){
+    if (app.globalData.userInfo) {
+      wx.reLaunch({
+        url: "/pages/addItem/addItem"
+      })
+    }else{
+      wx.reLaunch({
+        url: "/pages/login/login?toPage=addItem"
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

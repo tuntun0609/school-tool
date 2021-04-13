@@ -1,7 +1,18 @@
-<button bindtap="test">test</button>
-<view class="addForm">
-  
+<!-- 选择tag -->
+<view class="tag-choose">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{tags}}">
+    <view class="picker" wx:if="{{isChoose}}">当前选择：{{tags[index]}}</view>
+    <view class="picker" wx:else>点击选择tag</view>
+  </picker>
 </view>
 
-
+<view class="addForm">
+  <view class="title">
+    <input class="title-input" placeholder="标题" value="{{title}}" maxlength="20" bindinput="onTitleInputEvent" placeholder-class="input-placeholder"/>
+  </view>
+  <view class="des">
+    <textarea placeholder-class="input-placeholder" class="des-input" placeholder="内容" bindinput="onDesInputEvent" maxlength="250" auto-height="true" />
+  </view>
+</view>
+<view class="addItem-btn" bindtap="add">提 交</view>
 <tabBar></tabBar>

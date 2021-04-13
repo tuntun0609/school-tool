@@ -6,34 +6,82 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    tags:["失物招领","二手信息","表白墙","其他"],
+    index:'',
+    title:'',
+    des:'',
+    isChoose:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if (!app.globalData.userInfo) {
+      wx.reLaunch({
+        url: "/pages/login/login?toPage=addItem"
+      })
+    }
   },
-  test:function(){
-    // console.log(123456);
-    if (app.globalData.openid) {
+  bindPickerChange:function(e){
+    // console.log(object);s
+    this.setData({
+      index: e.detail.value,
+      isChoose:true
+    })
+    // console.log(this.index);
+  },
+  onTitleInputEvent:function(e){
+    this.setData({
+      title: e.detail.value
+    })
+  },
+  onDesInputEvent:function(e){
+    this.setData({
+      des: e.detail.value
+    })
+  },
+  add:function(){
+    let that = this;
+    // if (app.globalData.openid&&this.data.title&&this.data.des&&this.data.index) {
+    //   console.log(1);
+    // }else{
+    //   console.log(0);
+    // }
+    if (app.globalData.userInfo&&this.data.title&&this.data.des&&this.data.index) {
+      wx.showLoading({
+        title: '正在上传中...',
+      })
       wx.cloud.callFunction({
         name:'addItem',
         data:{
           dbName:'item',
           addData:{
             openid:app.globalData.openid,
-            title:'找雨伞',
-            msg:"ltx丢了雨伞111"
+            title: that.data.title,
+            msg: that.data.des,
+            tag: that.data.tags[that.data.index]
           }
         }
       }).then(res => {
-        console.log(res);
+        // console.log(res);
+        wx.hideLoading();
+        if (this.options.backPage) {
+          wx.reLaunch({
+            url: `/pages/${this.options.backPage}/${this.options.backPage}`
+          })
+        }else{
+          wx.reLaunch({
+            url: `/pages/user/user`
+          })
+        }
+        
       }).catch(err => {
         console.log(err);
       })
-    }    
+    }else{
+      console.log("填写完整");
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

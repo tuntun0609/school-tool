@@ -9,7 +9,10 @@ page{
 }
 
 swiper{
-	padding: 20rpx 40rpx;
+  width: 600rpx;
+	/* padding: 20rpx 40rpx; */
+  margin: 0 auto;
+  /* margin-top: 50rpx; */
 	/* border-radius: 100rpx; */
 }
 

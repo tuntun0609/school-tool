@@ -1,18 +1,23 @@
 <!-- 选择tag -->
 <view class="tag-choose">
   <picker bindchange="bindPickerChange" value="{{index}}" range="{{tags}}">
-    <view class="picker" wx:if="{{isChoose}}">当前选择：{{tags[index]}}</view>
+    <view class="picker" wx:if="{{isTagChoose}}">当前选择：{{tags[index]}}</view>
     <view class="picker" wx:else>点击选择tag</view>
   </picker>
 </view>
-
 <view class="addForm">
   <view class="title">
-    <input class="title-input" placeholder="标题" value="{{title}}" maxlength="20" bindinput="onTitleInputEvent" placeholder-class="input-placeholder"/>
+    <input class="title-input" placeholder="标题" value="{{title}}" maxlength="20" bindinput="onTitleInputEvent" placeholder-class="input-placeholder" />
   </view>
   <view class="des">
     <textarea placeholder-class="input-placeholder" class="des-input" placeholder="内容" bindinput="onDesInputEvent" maxlength="250" auto-height="true" />
   </view>
+  <view class="imgUpload">
+    <image class="haveAdd" wx:for="{{imgList}}" wx:key="this" src="{{item}}"/>
+    <image class="img-add" bindtap="imgChoose" src="data:image/png;base64,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" />
+  </view>
+
+  <!-- <view wx:if="{{isImgChoose}}" class="addImg-btn" bindtap="upImg">点击上传图片</view> -->
 </view>
-<view class="addItem-btn" bindtap="add">提 交</view>
+<view class="addItem-btn" bindtap="addMain">提 交</view>
 <tabBar></tabBar>

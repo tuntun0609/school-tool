@@ -1,12 +1,12 @@
 {
   "pages": [
-    "pages/index/index",  
     "pages/addItem/addItem",
+    "pages/index/index",  
+    "pages/webview/webview",
     "pages/user/user",
     "pages/sendFood/sendFood",
     "pages/login/login",
     "pages/notice/notice",
-    "pages/webview/webview",
     "pages/foodDes/foodDes"
   ],
   "window": {

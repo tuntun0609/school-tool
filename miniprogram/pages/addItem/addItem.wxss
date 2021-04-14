@@ -34,7 +34,7 @@ page {
 .title .title-input{
 	font-size: 48rpx;
 	width: 100%;
-	height: 54rpx;
+	height: 60rpx;
 	margin-bottom: 30rpx;
 	color: #192a56;
 }
@@ -63,4 +63,36 @@ page {
   font-size: 36rpx;
   font-weight: 400;
 	margin-bottom: 155rpx;
+}
+
+.imgUpload{
+	width: 650rpx;
+	margin: 0 auto;
+	margin-bottom: 10rpx;
+}
+
+.imgUpload .haveAdd{
+	width: 120rpx;
+	height: 120rpx;
+	border-radius: 20rpx;
+	margin-right: 20rpx;
+	margin-bottom: 20rpx;
+}
+
+/* .addImg-btn{
+	width: 200rpx;
+	height: 80rpx;
+	text-align: center;
+	line-height: 80rpx;
+	border-radius: 30rpx;
+	background-color: #7688ba;
+  color: white;
+  font-size: 28rpx;
+  font-weight: 400;
+} */
+
+.imgUpload .img-add{
+	width: 120rpx;
+	height: 120rpx;
+	margin-bottom: 20rpx;
 }

@@ -6,11 +6,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tags:["失物招领","二手信息","表白墙","其他"],
-    index:'',
-    title:'',
-    des:'',
-    isChoose:false
+    tags: ["失物招领", "二手信息", "表白墙", "其他"],
+    index: '',
+    title: '',
+    des: '',
+    isTagChoose: false,
+    imgList: [],
+    cloudImgList: [],
+    isImgChoose: false,
   },
 
   /**
@@ -23,64 +26,146 @@ Page({
       })
     }
   },
-  bindPickerChange:function(e){
+  bindPickerChange: function (e) {
     // console.log(object);s
     this.setData({
       index: e.detail.value,
-      isChoose:true
+      isTagChoose: true
     })
     // console.log(this.index);
   },
-  onTitleInputEvent:function(e){
+  onTitleInputEvent: function (e) {
     this.setData({
       title: e.detail.value
     })
   },
-  onDesInputEvent:function(e){
+  onDesInputEvent: function (e) {
     this.setData({
       des: e.detail.value
     })
   },
-  add:function(){
+  //选择图片
+  imgChoose: async function () {
     let that = this;
-    // if (app.globalData.openid&&this.data.title&&this.data.des&&this.data.index) {
-    //   console.log(1);
-    // }else{
-    //   console.log(0);
-    // }
-    if (app.globalData.userInfo&&this.data.title&&this.data.des&&this.data.index) {
-      wx.showLoading({
-        title: '正在上传中...',
-      })
-      wx.cloud.callFunction({
-        name:'addItem',
-        data:{
-          dbName:'item',
-          addData:{
-            openid:app.globalData.openid,
-            title: that.data.title,
-            msg: that.data.des,
-            tag: that.data.tags[that.data.index]
-          }
-        }
-      }).then(res => {
-        // console.log(res);
-        wx.hideLoading();
-        if (this.options.backPage) {
-          wx.reLaunch({
-            url: `/pages/${this.options.backPage}/${this.options.backPage}`
-          })
-        }else{
-          wx.reLaunch({
-            url: `/pages/user/user`
-          })
-        }
-        
-      }).catch(err => {
+    wx.chooseImage({
+      count: 9,
+      success(res) {
+        const paths = res.tempFilePaths;
+        that.setData({
+          imgList: paths,
+          isImgChoose: true
+        });
+        // console.log(paths);
+      },
+      fail(err) {
         console.log(err);
+      }
+    });
+  },
+  //上传图片返回云地址数组
+  upImg: function () {
+    let that = this;
+    return new Promise((resolve, reject) => {
+      wx.showLoading({
+        title: '图片上传中',
       })
-    }else{
-      console.log("填写完整");
+      that.data.imgList.forEach(async (item, index) => {
+        let obj = item.lastIndexOf("/");
+        let imgName = item.substr(obj + 1);
+
+        await wx.cloud.uploadFile({
+          cloudPath: imgName,
+          filePath: item,
+        }).then(async res => {
+          let temp = that.data.cloudImgList;
+          temp.push(res.fileID);
+          await that.setData({
+            cloudImgList: temp
+          })
+          if (index == that.data.imgList.length - 1) {
+            wx.hideLoading();
+            wx.showToast({
+              title: '上传成功',
+              icon: 'success',
+              duration: 1000
+            })
+            resolve(1);
+          }
+          
+        }).catch(err => {
+          wx.hideLoading();
+          wx.showToast({
+            title: '上传失败',
+            icon: 'error',
+            duration: 1000
+          })
+          console.log(err);
+        })
+      });
+
+      
+    })
+  },
+  // 添加
+  upItem: function () {
+    let that = this;
+    wx.showLoading({
+      title: '数据上传中',
+    })
+    wx.cloud.callFunction({
+      name: 'addItem',
+      data: {
+        dbName: 'item',
+        addData: {
+          openid: app.globalData.openid,
+          title: that.data.title,
+          msg: that.data.des,
+          tag: that.data.tags[that.data.index],
+          imgList: that.data.cloudImgList
+        }
+      }
+    }).then(res => {
+      // console.log(res);
+      wx.hideLoading();
+      wx.showToast({
+        title: '添加成功',
+        icon: 'success',
+        duration: 1000
+      })
+      // 重定向
+      if (that.options.backPage) {
+        wx.reLaunch({
+          url: `/pages/${that.options.backPage}/${that.options.backPage}`
+        })
+      } else {
+        wx.reLaunch({
+          url: `/pages/user/user`
+        })
+      }
+    }).catch(err => {
+      console.log(err);
+    })
+  },
+  // 添加总逻辑
+  addMain: async function () {
+    let that = this;
+    
+    if (app.globalData.userInfo && this.data.title && this.data.des && this.data.index) {
+      
+      if (that.data.isImgChoose) {
+        await that.upImg();
+        that.upItem();
+      } else {
+        that.upItem();
+      }
+
+    } else {
+      console.log("填写完整,或上传图片");
+      wx.showToast({
+        title: '信息不完整',
+        icon: 'error',
+        duration: 1000
+      })
     }
   },
   /**

@@ -5,16 +5,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    da:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad:async function (options) {
+    await this.test1();
+    console.log(this.data.da);
   },
-
+  test1:async function(){
+    this.setData({
+      da:'5446545'
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

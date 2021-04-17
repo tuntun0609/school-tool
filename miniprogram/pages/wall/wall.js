@@ -18,13 +18,13 @@ Page({
       title: '正在加载中...',
     })
     wx.cloud.callFunction({
-      name:'getWallItemByTag',
-      data:{
-        tag:'失物招领'
+      name: 'getWallItemByTag',
+      data: {
+        tag: '失物招领'
       }
     }).then(res => {
       this.setData({
-        itemList:res.result.data
+        itemList: res.result.data
       })
       // console.log(res.result.data);
       wx.hideLoading();

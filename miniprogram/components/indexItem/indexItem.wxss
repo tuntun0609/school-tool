@@ -1,4 +1,5 @@
 .index-item{
+  width: 150rpx;
   display: flex;
   flex-direction: column;
   justify-content: center;

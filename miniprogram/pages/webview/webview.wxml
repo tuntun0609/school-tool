@@ -4,7 +4,7 @@
   target="miniProgram"
   open-type="navigate"
   app-id="wx2c348cf579062e56" 
-  path="packages/restaurant/restaurant/restaurant?act_page_code=undefined&cTime=1618320186105&poi_id=900200602961041&ref_list_id=2b6104a5c906f055c53f8d68d1d2843e" 
+  path="packages/restaurant/restaurant/restaurant?act_page_code=undefined&cTime=1618664944934&poi_id=872291905712616" 
   extra-data="" version="release">我的店铺</navigator>
 
   <button bindtap="toMeituan">123465798</button>

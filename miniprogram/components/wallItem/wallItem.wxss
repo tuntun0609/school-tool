@@ -33,6 +33,7 @@
 
 .wall-item-msg {
 	margin-top: 10rpx;
+  text-align:justify;
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;

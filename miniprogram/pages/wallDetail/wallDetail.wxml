@@ -1,4 +1,14 @@
-<!--pages/wallDetail/wallDetail.wxml-->
-{{msg}}
-
+<!-- pages/wallDetail/wallDetail.wxml -->
+<!-- {{msg}} -->
+<view class="detail-main">
+  <view class="detail-text">
+    <view class="detail-title">{{msg.title}}</view>
+    <view class="detail-date">发布时间：{{date}}</view>
+    <view class="detail-msg">{{msg.msg}}</view>
+    <view class="reminder">滑动或点击查完完整图片</view>
+    <scroll-view scroll-x="true" class="imgList">
+      <image wx:for="{{msg.imgList}}" wx:key="this" mode="aspectFill" class="detail-img" data-src="{{item}}" src="{{item}}" bindtap="previewImage" />
+    </scroll-view>
+  </view>
+</view>
 <tabBar></tabBar>

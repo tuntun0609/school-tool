@@ -1,33 +1,38 @@
-// pages/webview/webview.js
+// pages/wallDetail/wallDetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    da:''
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad:async function (options) {
-    await this.test1();
-    console.log(this.data.da);
-  },
-  test1:async function(){
-    this.setData({
-      da:'5446545'
+  onLoad: function (options) {
+    let that = this;
+    console.log(options.id);
+    wx.showLoading({
+      title: '正在加载中...',
     })
-  },
-  toMeituan:function(){
-    wx.navigateToMiniProgram({
-      appId: 'wx2c348cf579062e56',
-      path: 'packages/restaurant/restaurant/restaurant?act_page_code=undefined&cTime=1618320186105&poi_id=900200602961041&ref_list_id=2b6104a5c906f055c53f8d68d1d2843e',
-      success(res) {
+    wx.cloud.callFunction({
+      name: 'getItemDetailById',
+      data: {
+        id: options.id
       }
+    }).then(res => {
+      that.setData({
+        msg:res.result.data[0]
+      })
+      console.log(that.data.msg);
+      wx.hideLoading();
+    }).catch(err => {
+      console.log(err);
     })
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

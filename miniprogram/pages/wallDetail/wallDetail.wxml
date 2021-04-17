@@ -1,0 +1,4 @@
+<!--pages/wallDetail/wallDetail.wxml-->
+{{msg}}
+
+<tabBar></tabBar>

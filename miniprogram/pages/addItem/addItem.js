@@ -82,7 +82,7 @@ Page({
           await that.setData({
             cloudImgList: temp
           })
-          if (index == that.data.imgList.length - 1) {
+          if (that.data.cloudImgList.length == that.data.imgList.length) {
             wx.hideLoading();
             wx.showToast({
               title: '上传成功',
@@ -109,6 +109,7 @@ Page({
   // 添加
   upItem: function () {
     let that = this;
+    let now = new Date().getTime();
     wx.showLoading({
       title: '数据上传中',
     })
@@ -121,7 +122,8 @@ Page({
           title: that.data.title,
           msg: that.data.des,
           tag: that.data.tags[that.data.index],
-          imgList: that.data.cloudImgList
+          imgList: that.data.cloudImgList,
+          time: now
         }
       }
     }).then(res => {
@@ -153,8 +155,9 @@ Page({
     if (app.globalData.userInfo && this.data.title && this.data.des && this.data.index) {
       
       if (that.data.isImgChoose) {
-        await that.upImg();
-        that.upItem();
+        that.upImg().then(res => {
+          that.upItem();
+        });
       } else {
         that.upItem();
       }

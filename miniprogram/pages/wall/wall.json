@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "wallItem":"/components/wallItem/wallItem"
+  },
+  "navigationBarBackgroundColor": "#fff"
+}

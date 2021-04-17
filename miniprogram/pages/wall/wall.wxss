@@ -1,0 +1,47 @@
+/* pages/wall/wall.wxss */
+
+page {
+	height: 100%;
+	background-color: #f5f6fa;
+}
+
+.wall-scroll-view {
+	/* width: 650rpx; */
+	height: 80rpx;
+	line-height: 80rpx;
+	white-space: nowrap;
+	box-sizing: border-box;
+	margin: 0 auto;
+	/* margin-top: 20rpx; */
+	background-color: white;
+	/* border-radius: 20rpx; */
+	box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.wall-scroll-item {
+	width: 200rpx;
+	display: inline-block;
+	text-align: center;
+}
+
+.wall-scroll-item:first-child {
+	margin-left: 10rpx;
+}
+
+.wall-title {
+	text-align: center;
+	margin-top: 40rpx;
+	font-size: 48rpx;
+	color: #20366d;
+	letter-spacing: 10rpx;
+}
+
+
+.wallItem:last-child {
+	margin-bottom: 150rpx;
+}
+
+.tagChoose{
+	color: #3a206f;
+	font-weight: 600;
+}

@@ -1,8 +1,10 @@
 {
   "pages": [
-    "pages/addItem/addItem",
     "pages/index/index",  
+    "pages/wall/wall",
+    "pages/wallDetail/wallDetail",
     "pages/webview/webview",
+    "pages/addItem/addItem",
     "pages/user/user",
     "pages/sendFood/sendFood",
     "pages/login/login",
@@ -12,7 +14,7 @@
   "window": {
     "backgroundColor": "#f5f6fa",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#f5f6fa",
     "navigationBarTitleText": "JNU校园工具箱",
     "navigationBarTextStyle": "black"
   },
@@ -20,5 +22,8 @@
   "style": "v2",
   "usingComponents": {
     "tabBar":"/components/tabBar/tabBar"
-  }
+  },
+  "navigateToMiniProgramAppIdList":[
+    "wx2c348cf579062e56"
+  ]
 }

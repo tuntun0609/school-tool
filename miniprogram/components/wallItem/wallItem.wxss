@@ -1,0 +1,43 @@
+/* components/wallItem/wallItem.wxss */
+.wall-item {
+	box-sizing: border-box;
+  min-height: 150rpx;
+	max-height: 250rpx;
+	width: 600rpx;
+	margin: 0 auto;
+	margin-top: 40rpx;
+	background-color: white;
+	border-radius: 20rpx;
+	box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
+	padding: 30rpx;
+}
+
+.wall-item-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #20366d;
+  /* font-weight: 600; */
+	font-size: 28rpx;
+}
+
+.wall-item-title-text {
+  width: 400rpx;
+  font-weight: 600;
+	font-size: 36rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+  color: #20366d;
+}
+
+.wall-item-msg {
+	margin-top: 10rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}

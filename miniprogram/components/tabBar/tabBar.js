@@ -26,7 +26,7 @@ Component({
     },
     noticeClick:function (){
       wx.reLaunch({
-        url: "/pages/notice/notice"
+        url: "/pages/wall/wall"
       })
     },
     userClick:function (){

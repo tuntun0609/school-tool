@@ -1,6 +1,6 @@
 <!-- components/foodList/foodItem.wxml -->
 <view class="sendFood-item" bindtap="foodDes" bindlongpress="copyName">
-  <image mode="aspectFill" class="sendFood-img" src="{{items.shopImg}}" />
+  <image lazy-load="true" mode="aspectFill" class="sendFood-img" src="{{items.shopImg}}" />
   <view class="sendFood-msg">
     <view class="sendFood-title">{{items.shopName}}</view>
     <view class="sendFood-tag">{{items.tag}}</view>

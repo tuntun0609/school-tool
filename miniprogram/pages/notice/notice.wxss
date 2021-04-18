@@ -1,1 +1,22 @@
 /* pages/notice/notice.wxss */
+page {
+	background-color: #f5f6fa;
+}
+
+.notice-main{
+  box-sizing: border-box;
+  width: 750rpx;
+  height: 1200rpx;
+  margin-top: 120rpx;
+  padding: 50rpx;
+  background-color: white;
+  box-shadow: 0 0 10rpx 0rpx rgba(0, 0, 0, 0.3);
+  border-radius: 50rpx;
+}
+
+.notice-title{
+  text-align: center;
+  font-size: 48rpx;
+  color: #20366d;
+  margin-bottom: 30rpx;
+}

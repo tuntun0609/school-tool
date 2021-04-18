@@ -1,14 +1,15 @@
 {
   "pages": [
+    "pages/notice/notice",
     "pages/index/index",  
+    "pages/wall/wall",
+    "pages/urlCopy/urlCopy", 
     "pages/sendFood/sendFood",
     "pages/wallDetail/wallDetail",
-    "pages/wall/wall",
     "pages/webview/webview",
     "pages/addItem/addItem",
     "pages/user/user",
     "pages/login/login",
-    "pages/notice/notice",
     "pages/foodDes/foodDes"
   ],
   "window": {

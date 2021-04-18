@@ -1,3 +1,8 @@
 <!--pages/notice/notice.wxml-->
-<text>pages/notice/notice.wxml</text>
+
+<view class="notice-main">
+  <view class="notice-title">公 告 栏</view>
+  <rich-text nodes="{{text}}"></rich-text>
+</view>
+
 <tabBar></tabBar>

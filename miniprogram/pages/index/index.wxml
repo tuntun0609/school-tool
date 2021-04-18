@@ -18,25 +18,25 @@
   <!-- 第一行 -->
   <view class="index-list">
 
-    <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="水电查询"></indexItem>
+    <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/水电.png" msg="水电查询"></indexItem>
 
-    <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="外卖推荐" pageTo="sendFood"></indexItem>
+    <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/外卖.png" msg="外卖推荐" pageTo="sendFood"></indexItem>
 
-    <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="图书馆"></indexItem>
+    <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/图书馆.png" msg="图书馆"></indexItem>
 
-    <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="校历"></indexItem>
+    <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/校历.png" msg="校历"></indexItem>
 
   </view>
   <!-- 第二行 -->
   <view class="index-list">
 
-    <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="地图"></indexItem>
+    <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/地图.png" msg="地图"></indexItem>
 
-    <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="讨论墙" pageTo="wall"></indexItem>
+    <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/墙.png" msg="讨论墙" pageTo="wall"></indexItem>
 
-    <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="宣传申请"></indexItem>
+    <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/宣传.png" msg="宣传申请" pageTo="urlCopy" options='https://ehall.jnu.edu.cn/infoplus/form/JNUPYXQXCSQ/start'></indexItem>
 
-    <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="场地预约"></indexItem>
+    <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/场地预约.png" msg="场地预约" pageTo="urlCopy" options='https://ehall.jnu.edu.cn/infoplus/form/PYXQXCDYY/start'></indexItem>
 
   </view>
 

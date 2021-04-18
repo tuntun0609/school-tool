@@ -1,0 +1,7 @@
+<!--pages/urlCopy/urlCopy.wxml-->
+<view class="tishi">长按链接或点击按钮均可复制</view>
+<view class="urlText" bind:longpress="copyUrl">{{url}}</view>
+
+<view class="urlCopyUrl" bindtap="copyUrl">点 击 复 制</view>
+
+<tabBar></tabBar>

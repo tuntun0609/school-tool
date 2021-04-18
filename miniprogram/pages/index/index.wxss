@@ -10,6 +10,7 @@ page{
 
 swiper{
   width: 650rpx;
+  height: 280rpx;
 	/* padding: 20rpx 40rpx; */
   margin: 0 auto;
   /* margin-top: 50rpx; */

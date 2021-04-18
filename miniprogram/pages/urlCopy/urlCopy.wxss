@@ -1,0 +1,42 @@
+/* pages/urlCopy/urlCopy.wxss */
+page{
+  /* height: 100%; */
+  background-color: #f5f6fa;
+}
+
+.tishi{
+  margin-top: 280rpx;
+  text-align: center;
+  color: #b5b5b5;
+  
+}
+
+.urlText{
+  box-sizing: border-box;
+  width: 650rpx;
+  height: 150rpx;
+  line-height: 55rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  padding: 20rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
+  word-wrap: break-word;
+}
+
+.urlCopyUrl{
+  margin: 0 auto;
+	width: 400rpx;
+	height: 100rpx;
+	text-align: center;
+	line-height: 100rpx;
+	border-radius: 30rpx;
+	background-color: #7688ba;
+  color: white;
+  font-size: 36rpx;
+  font-weight: 400;
+  margin-top: 50rpx;
+	margin-bottom: 155rpx;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
+}

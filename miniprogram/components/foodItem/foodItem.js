@@ -40,6 +40,8 @@ Component({
         success(res){
           wx.showToast({
             title: '复制成功',
+            icon: 'none',
+            duration: 1000
           })
         }
       })

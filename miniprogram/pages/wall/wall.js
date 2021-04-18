@@ -7,7 +7,8 @@ Page({
   data: {
     tagNow: '失物招领',
     title: '失物招领',
-    itemList: []
+    itemList: [],
+    skipNum: 0
   },
 
   /**
@@ -30,6 +31,19 @@ Page({
       wx.hideLoading();
     }).catch(err => {
       console.log(err);
+    })
+
+    wx.cloud.callFunction({
+      name: 'getItemTotalNumByTag',
+      data: {
+        tag: this.data.tagNow
+      }
+    }).then(res => {
+      // console.log(res);
+      this.setData({
+        totalNum: res.result.total
+      })
+      console.log(this.data.totalNum);
     })
   },
 
@@ -56,12 +70,91 @@ Page({
         itemList: res.result.data,
         title: e.target.dataset.tag
       })
+      wx.cloud.callFunction({
+        name: 'getItemTotalNumByTag',
+        data: {
+          tag: this.data.tagNow
+        }
+      }).then(res => {
+        // console.log(res);
+        this.setData({
+          totalNum: res.result.total
+        })
+        console.log(this.data.totalNum);
+      })
       // console.log(res.result.data);
       wx.hideLoading();
     }).catch(err => {
       console.log(err);
     })
 
+
+  },
+  prePage: function () {
+    if (this.data.skipNum - 20 >= 0) {
+      wx.showLoading({
+        title: '正在加载中...'
+      })
+      wx.cloud.callFunction({
+        name: 'getWallItemByTag',
+        data: {
+          tag: this.data.tagNow,
+          skipNum: this.data.skipNum - 20
+        }
+      }).then(res => {
+        this.setData({
+          list: res.result.data,
+          skipNum: this.data.skipNum - 20
+        })
+        wx.hideLoading();
+        wx.pageScrollTo({
+          scrollTop: 0,
+        })
+      }).catch(err => {
+        console.log(err);
+        wx.hideLoading();
+      })
+    } else {
+      wx.showToast({
+        title: '已到第一页',
+        icon: 'error',
+        duration: 1000
+      })
+    }
+
+  },
+  nextPage: function () {
+    if (this.data.skipNum + 20 < this.data.totalNum) {
+      wx.showLoading({
+        title: '正在加载中...'
+      })
+      wx.cloud.callFunction({
+        name: 'getWallItemByTag',
+        data: {
+          tag: this.data.tagNow,
+          skipNum: this.data.skipNum + 20
+        }
+      }).then(res => {
+        this.setData({
+          list: res.result.data,
+          skipNum: this.data.skipNum + 20
+        })
+        wx.hideLoading();
+        console.log(this.data.skipNum);
+        wx.pageScrollTo({
+          scrollTop: 0,
+        })
+      }).catch(err => {
+        console.log(err);
+        wx.hideLoading();
+      })
+    } else {
+      wx.showToast({
+        title: '已到最后一页',
+        icon: 'error',
+        duration: 1000
+      })
+    }
 
   },
   /**

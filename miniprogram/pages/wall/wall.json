@@ -2,5 +2,6 @@
   "usingComponents": {
     "wallItem":"/components/wallItem/wallItem"
   },
-  "navigationBarBackgroundColor": "#fff"
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "信息墙"
 }

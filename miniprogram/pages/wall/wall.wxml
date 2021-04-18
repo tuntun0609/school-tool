@@ -1,19 +1,26 @@
 <!-- pages/wall/wall.wxml -->
-
-<tabBar></tabBar>
-<view class="wall main">
+<view class="wall-main">
   <scroll-view class="wall-scroll-view" scroll-x="true" enhanced="true" show-scrollbar="true">
-    <view class="wall-scroll-item {{(tagNow=='失物招领')?'tagChoose':''}}" data-tag="失物招领" bindtap="tagChoose">失物招领</view>
-    <view class="wall-scroll-item {{(tagNow=='表白墙')?'tagChoose':''}}" data-tag="表白墙" bindtap="tagChoose" >表白墙</view>
-    <view class="wall-scroll-item {{(tagNow=='二手信息')?'tagChoose':''}}" data-tag="二手信息" bindtap="tagChoose" >二手信息</view>
-    <view class="wall-scroll-item {{(tagNow=='其他')?'tagChoose':''}}" data-tag="其他" bindtap="tagChoose" >其他</view>
+    <view class="wall-scroll-item {{(tagNow=='失物招领')?'tagChoose':''}}" data-tag="失物招领" bindtap="tagChoose">
+      失物招领
+    </view>
+    <view class="wall-scroll-item {{(tagNow=='表白墙')?'tagChoose':''}}" data-tag="表白墙" bindtap="tagChoose">
+      表白墙
+    </view>
+    <view class="wall-scroll-item {{(tagNow=='二手信息')?'tagChoose':''}}" data-tag="二手信息" bindtap="tagChoose">
+      二手信息
+    </view>
+    <view class="wall-scroll-item {{(tagNow=='其他')?'tagChoose':''}}" data-tag="其他" bindtap="tagChoose">
+      其他
+    </view>
   </scroll-view>
-
-
-
   <!-- <view class="wall-title">{{title}}</view> -->
-
   <view class="wall-list">
-    <wallItem class="wallItem" wx:for="{{itemList}}" items="{{item}}" wx:key="_id"></wallItem>
+    <wallItem class="wall-Item" wx:for="{{itemList}}" items="{{item}}" wx:key="_id"></wallItem>
   </view>
 </view>
+<view class="changePage">
+  <view class="prePage-btn" bindtap="prePage">上一页</view>
+  <view class="nextPage-btn" bindtap="nextPage">下一页</view>
+</view>
+<tabBar></tabBar>

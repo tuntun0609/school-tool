@@ -1,4 +1,4 @@
 <view class="index-item" bindtap="toPage">
-  <image src="{{imgUrl}}" class="indexItem-img" />
+  <image mode="aspectFit" src="{{imgUrl}}" class="indexItem-img" />
   <view class="indexItem-msg">{{msg}}</view>
 </view>

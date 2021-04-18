@@ -8,6 +8,6 @@ exports.main = async (event, context) => {
   let skipNum = event.skipNum?event.skipNum:0;
   let data = cloud.database().collection("item").where({
     tag:event.tag
-  }).orderBy("time","desc").limit(20).skip(skipNum).get();
+  }).count();
   return data;
 }

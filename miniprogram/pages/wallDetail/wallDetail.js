@@ -50,7 +50,8 @@ Page({
     // console.log(e.currentTarget.dataset.src);
     let that = this;
     wx.previewImage({
-      urls:[e.currentTarget.dataset.src]
+      current: e.currentTarget.dataset.src,
+      urls: that.data.msg.imgList
     })
   },
   /**

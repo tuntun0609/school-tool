@@ -1,33 +1,34 @@
-// pages/user/user.js
-const app = getApp();
+// pages/urlCopy/urlCopy.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo: {},
+    url:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      userInfo:app.globalData.userInfo
-    })
-    // console.log(this.data.userInfo);
-  },
-  add:function(){
-    if (app.globalData.userInfo) {
-      wx.navigateTo({
-        url: "/pages/addItem/addItem"
-      })
-    }else{
-      wx.navigateTo({
-        url: "/pages/login/login?toPage=addItem"
+    if (options.options) {
+      this.setData({
+        url:options.options
       })
     }
+  },
+  copyUrl:function(){
+    wx.setClipboardData({
+      data: this.data.url,
+      success(res){
+        wx.showToast({
+          title: '复制成功',
+          icon: 'none',
+          duration: 1000
+        })
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

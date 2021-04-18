@@ -36,12 +36,37 @@ page {
 	letter-spacing: 10rpx;
 }
 
-
-.wallItem:last-child {
-	margin-bottom: 150rpx;
+.wall-main{
+	padding-bottom: 250rpx;
 }
 
 .tagChoose{
 	color: #3a206f;
 	font-weight: 600;
+}
+
+.changePage{
+  width: 750rpx;
+  height: 100rpx;
+  line-height: 50rpx;
+  /* margin-top: 30rpx; */
+  /* margin-bottom: 120rpx; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+	position: fixed;
+	bottom: 120rpx;
+	/* border-bottom: solid #b5b5b5 2rpx; */
+}
+
+.changePage .prePage-btn{
+  width: 375rpx;
+  text-align: center;
+  border-right: solid #b5b5b5 2rpx;
+}
+
+.changePage .nextPage-btn{
+  width: 375rpx;
+  text-align: center;
 }

@@ -14,13 +14,13 @@
 }
 
 .sendFood-item .sendFood-img{
-  width: 100rpx;
-  height: 100rpx;
+  width: 125rpx;
+  height: 125rpx;
   border-radius: 20rpx;
 }
 
 .sendFood-item .sendFood-msg{
-  width: 500rpx;
+  width: 400rpx;
   margin-left: 25rpx;
 }
 

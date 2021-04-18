@@ -1,11 +1,11 @@
 <!-- components/foodList/foodItem.wxml -->
-<view class="sendFood-item" bindtap="foodDes">
-  <image class="sendFood-img" src="{{items.shopImg}}" />
+<view class="sendFood-item" bindtap="foodDes" bindlongpress="copyName">
+  <image mode="aspectFill" class="sendFood-img" src="{{items.shopImg}}" />
   <view class="sendFood-msg">
     <view class="sendFood-title">{{items.shopName}}</view>
     <view class="sendFood-tag">{{items.tag}}</view>
   </view>
-  <navigator class="sendFood-dec">
-    <image class="sendFood-next" src="/images/箭头.png" />
-  </navigator>
+  <!-- <navigator class="sendFood-dec">
+    <image mode="aspectFill" class="sendFood-next" src="/images/箭头.png" />
+  </navigator> -->
 </view>

@@ -1,7 +1,7 @@
 <!--miniprogram/pages/index/index.wxml-->
 <view class="index-main">
   <!-- 轮播图 -->
-  <swiper indicator-dots class="index-swiper" autoplay="{{true}}">
+  <swiper indicator-color="rgba(0, 0, 0, .3)" indicator-active-color="#fff" indicator-dots class="index-swiper" autoplay="{{true}}">
     <swiper-item>
       <image class="swiper-img" src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" />
     </swiper-item>
@@ -24,26 +24,22 @@
 
     <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="图书馆"></indexItem>
 
+    <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="校历"></indexItem>
+
   </view>
   <!-- 第二行 -->
   <view class="index-list">
 
     <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="地图"></indexItem>
 
-    <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="讨论墙"></indexItem>
+    <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="讨论墙" pageTo="wall"></indexItem>
 
     <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="宣传申请"></indexItem>
 
-  </view>
-  <!-- 第三行 -->
-  <view class="index-list">
     <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="场地预约"></indexItem>
 
-    <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="公告栏"></indexItem>
-
-    <indexItem imgUrl="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" msg="校历"></indexItem>
-
   </view>
+
 </view>
 
 

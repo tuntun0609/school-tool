@@ -9,11 +9,13 @@ page{
 }
 
 swiper{
-  width: 600rpx;
+  width: 650rpx;
 	/* padding: 20rpx 40rpx; */
   margin: 0 auto;
   /* margin-top: 50rpx; */
 	/* border-radius: 100rpx; */
+  overflow: hidden;
+  border-radius: 20rpx;
 }
 
 swiper-item{
@@ -27,7 +29,7 @@ swiper-item{
 }
 
 .index-list{
-  width: 600rpx;
+  width: 700rpx;
   margin: 0 auto;
   margin-top: 50rpx;
   display: flex;

@@ -1,8 +1,13 @@
 <!-- pages/sendFood/sendFood.wxml -->
 <view class="sendFood-list">
   <!-- 公告 -->
-  <view class="sendFood-notice">本页面所收集的是南校可送进校外卖店铺以及校内外卖平台，点击可查看详情:)</view>
+  <view class="sendFood-notice">本页面所收集的是南校可送进校外卖店铺以及校内外卖平台，长按复制店名，点击可查看详情:)</view>
   <!-- 店铺列表 -->
   <foodItem wx:for="{{list}}" class="foodItem" items="{{item}}" wx:key="shopName"></foodItem>
+
+  <view class="changePage">
+    <view class="prePage-btn" bindtap="prePage">上一页</view>
+    <view class="nextPage-btn" bindtap="nextPage">下一页</view>
+  </view>
 </view>
 <tabBar></tabBar>

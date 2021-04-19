@@ -7,7 +7,7 @@ page {
   box-sizing: border-box;
   width: 750rpx;
   height: 1200rpx;
-  margin-top: 120rpx;
+  margin-top: 50rpx;
   padding: 50rpx;
   background-color: white;
   box-shadow: 0 0 10rpx 0rpx rgba(0, 0, 0, 0.3);

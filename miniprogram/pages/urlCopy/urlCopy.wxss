@@ -14,15 +14,17 @@ page{
 .urlText{
   box-sizing: border-box;
   width: 650rpx;
-  height: 150rpx;
-  line-height: 55rpx;
+  height: 100rpx;
+  line-height: 100rpx;
   margin: 0 auto;
   margin-top: 20rpx;
-  padding: 20rpx;
+  /* padding: 20rpx; */
   background-color: #fff;
   border-radius: 20rpx;
   box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
-  word-wrap: break-word;
+  font-size: 22rpx;
+  text-align: center;
+  /* word-wrap: break-word; */
 }
 
 .urlCopyUrl{

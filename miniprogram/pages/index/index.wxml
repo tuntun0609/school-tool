@@ -3,13 +3,13 @@
   <!-- 轮播图 -->
   <swiper indicator-color="rgba(0, 0, 0, .3)" indicator-active-color="#fff" indicator-dots class="index-swiper" autoplay="{{true}}">
     <swiper-item>
-      <image class="swiper-img" src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" />
+      <image mode="aspectFit" class="swiper-img" src="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/banner/banner1.png" />
     </swiper-item>
     <swiper-item>
-      <image class="swiper-img" src="https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1819216937,2118754409&fm=26&gp=0.jpg" />
+      <image mode="aspectFit" bindtap="toNotice" class="swiper-img" src="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/banner/谷雨小清新插画公众号封面.png" />
     </swiper-item>
     <swiper-item>
-      <image class="swiper-img" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2273029747,2912173232&fm=15&gp=0.jpg" />
+      <image mode="aspectFit" class="swiper-img" bindtap="toNotice" src="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/banner/广告位招租.png" />
     </swiper-item>
   </swiper>
 
@@ -20,9 +20,11 @@
 
     <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/水电.png" msg="水电查询"></indexItem>
 
+    <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/图书馆.png" msg="图书馆" pageTo="urlCopy" options='https://libsouthic.jnu.edu.cn/ic?id=9'></indexItem>
+
     <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/外卖.png" msg="外卖推荐" pageTo="sendFood"></indexItem>
 
-    <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/图书馆.png" msg="图书馆"></indexItem>
+    
 
     <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/校历.png" msg="校历"></indexItem>
 

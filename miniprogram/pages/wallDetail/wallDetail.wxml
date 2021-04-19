@@ -4,6 +4,8 @@
   <view class="detail-text">
     <view class="detail-title">{{msg.title}}</view>
     <view class="detail-date">发布时间：{{date}}</view>
+    <view class="detail-tag">Tag：{{msg.tag}}</view>
+    <!-- <view class="fenge"></view> -->
     <view class="detail-msg">{{msg.msg}}</view>
     <view wx:if="{{msg.imgList[0]}}" class="reminder">滑动或点击查完完整图片</view>
     <scroll-view scroll-x="true" class="imgList">

@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/notice/notice",
     "pages/index/index",  
+    "pages/notice/notice",
     "pages/wall/wall",
     "pages/urlCopy/urlCopy", 
     "pages/sendFood/sendFood",

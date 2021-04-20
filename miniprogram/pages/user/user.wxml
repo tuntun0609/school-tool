@@ -9,7 +9,8 @@
   </view>
 
   <view class="addItem-btn" bindtap="add">添 加</view>
-
+  <view class="deleteReminder">-长按可删除-</view>
+  <wallItem bind:longpress="deleteItem" class="wallItem" wx:for="{{itemList}}" data-id="{{item._id}}" wx:key="_id" items="{{item}}"></wallItem>
 </view>
 
 

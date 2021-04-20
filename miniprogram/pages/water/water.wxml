@@ -1,0 +1,55 @@
+<!-- miniprogram/pages/index.wxml -->
+<view class="iconfont search-container">
+  <view class="title">水电查询</view>
+  <view class="search-wrap">
+    <form bindsubmit="formSubmit" bindreset="formReset" id="form1">
+      <!--       <input class="iconfont icon-lou" type="text" name="dormitory" id="dormitory" placeholder-class="place-holder" placeholder="输入宿舍楼号，如T1" /> -->
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class='iconfont icon-lou choseQuestion'>
+          <text class="{{storgeData.isChoosing?'choice':''}}">{{storgeData.chooseDormitory}}</text>
+        </view>
+      </picker>
+      <input class="iconfont icon-men" value="{{storgeData.room}}" type="number" name="room" id="room"
+        placeholder-class="place-holder" placeholder="输入房间号，如201或1001"></input>
+      <view class="button-wrap">
+        <button class="reset-btn" form-type="reset">
+          <text class="reset iconfont icon-reset"></text>
+          重置
+        </button>
+        <button class="search-btn" form-type="submit">
+          <text class="search iconfont icon-sousuo"></text>
+          查询
+        </button>
+      </view>
+    </form>
+  </view>
+  <view wx:if="{{status}}" class="result-wrap animation-slide-bottom">
+    <!--     <view class="iconfont icon-yue result-header">
+      <view class="result-title">查询结果</view>
+    </view> -->
+    <view class="result-container">
+      <view class="result-main">
+        <view class="iconfont icon-lou room">宿舍号<view class="user-detail">{{storgeData.chooseDormitory}}-{{storgeData.room}}
+          </view>
+        </view>
+        <view class="iconfont icon-yue- balance">余额<view
+            class="user-detail {{userData.detail.isInsufficient?'insufficient':''}}">￥{{userData.detail.balance}}</view>
+        </view>
+      </view>
+      <view class="bonus">
+        <view class="bonus-item">电力补贴<view class="price electricity">123度</view>
+        </view>
+        <view class="bonus-item">热水补贴<view class="price hot">345吨</view>
+        </view>
+        <view class="bonus-item">冷水补贴<view class="price cold">456吨</view>
+        </view>
+        <view class="bonus-item iconfont icon-shijianlishijilujishizhongbiaoxianxing search-time">数据截止至{{userData.time}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="footer" wx:if="{{!status}}">
+  <view class="tips tips-show">您的贴心水电助手</view>
+  <view class="pic image-animation-slide-bottom"></view>
+</view>

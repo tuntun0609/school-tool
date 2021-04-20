@@ -18,7 +18,7 @@
   <!-- 第一行 -->
   <view class="index-list">
 
-    <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/水电.png" msg="水电查询"></indexItem>
+    <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/水电.png" pageTo="water" msg="水电查询"></indexItem>
 
     <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/图书馆.png" msg="图书馆" pageTo="urlCopy" options='https://libsouthic.jnu.edu.cn/ic?id=9'></indexItem>
 

@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",  
+    "pages/user/user",
+    "pages/water/water",  
     "pages/notice/notice",
     "pages/wall/wall",
     "pages/urlCopy/urlCopy", 
@@ -8,7 +10,6 @@
     "pages/wallDetail/wallDetail",
     "pages/webview/webview",
     "pages/addItem/addItem",
-    "pages/user/user",
     "pages/login/login",
     "pages/foodDes/foodDes"
   ],

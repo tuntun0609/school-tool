@@ -14,20 +14,65 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      userInfo:app.globalData.userInfo
+      openid: app.globalData.openid,
+      userInfo: app.globalData.userInfo
     })
-    // console.log(this.data.userInfo);
+    wx.cloud.callFunction({
+      name: 'getItemDetailByUser',
+      data: {
+        openid: this.data.openid
+      }
+    }).then(res => {
+      this.setData({
+        itemList: res.result.data
+      })
+    }).catch(err => {
+      console.log(err);
+    })
   },
-  add:function(){
+  add: function () {
     if (app.globalData.userInfo) {
       wx.navigateTo({
         url: "/pages/addItem/addItem"
       })
-    }else{
+    } else {
       wx.navigateTo({
         url: "/pages/login/login?toPage=addItem"
       })
     }
+  },
+  deleteItem: function (e) {
+    let that = this;
+    wx.showModal({
+      title: '提示',
+      content: '是否删除',
+      success(res) {
+        if (res.confirm) {
+          wx.cloud.callFunction({
+            name: "deleteItemById",
+            data: {
+              id: e.target.dataset.id
+            }
+          }).then(res => {
+            let list = that.data.itemList;
+            list.forEach((item,index) => {
+              if (item._id == e.target.dataset.id) {
+                list.splice(index,1);
+                that.setData({
+                  itemList: list
+                })
+              }
+            });
+            wx.showToast({
+              title: '删除成功',
+              icon: 'success',
+              duration: 1000
+            })
+          })
+        }
+      }
+    })
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

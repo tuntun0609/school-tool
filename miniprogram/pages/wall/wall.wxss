@@ -42,7 +42,7 @@ page {
 
 .tagChoose{
 	color: #3a206f;
-	font-weight: 600;
+	font-weight: bold;
 }
 
 .changePage{

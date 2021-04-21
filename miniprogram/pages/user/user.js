@@ -26,6 +26,7 @@ Page({
       this.setData({
         itemList: res.result.data
       })
+      console.log(res.result.data);
     }).catch(err => {
       console.log(err);
     })
@@ -43,6 +44,7 @@ Page({
   },
   deleteItem: function (e) {
     let that = this;
+    console.log(e);
     wx.showModal({
       title: '提示',
       content: '是否删除',
@@ -57,6 +59,14 @@ Page({
             let list = that.data.itemList;
             list.forEach((item,index) => {
               if (item._id == e.target.dataset.id) {
+                if (item.imgList.length != 0) {
+                  wx.cloud.callFunction({
+                    name:'deleteImg',
+                    data:{
+                      imgList:item.imgList
+                    }
+                  })
+                }
                 list.splice(index,1);
                 that.setData({
                   itemList: list
@@ -69,6 +79,7 @@ Page({
               duration: 1000
             })
           })
+          
         }
       }
     })

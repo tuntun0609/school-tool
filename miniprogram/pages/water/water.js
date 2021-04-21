@@ -1,10 +1,13 @@
-
-const util = require('../../utils/util.js') //日期格式处理
+const util = require('./util.js') //日期格式处理
+const hotSubsidy = 8
+const coldSubsidy = 8
+const electricitySubsidy = 32
 Page({
   data: {
     array: ['T1', 'T2', 'T3', 'T4', 'T5', 'T10', 'T11', 'T12'],
     storgeData: {
       chooseDormitory: "点击选择宿舍楼号",
+      dormitory: '',
       room: '',
       isChoosing: false,
     },
@@ -15,8 +18,19 @@ Page({
         balance: '',
         isInsufficient: false //余额不足判断
       },
+      subsidy: {
+        electricity: '',
+        hotWater: '',
+        coldWater: ''
+      },
       time: '',
     },
+    calcData: {
+      //剩余占比
+      electricityRatio: 0,
+      hotRatio: 0,
+      coldRatio: 0
+    }
   },
   onLoad() {
     wx.getStorage({
@@ -27,6 +41,12 @@ Page({
       })
     }).catch(err => {
       console.log("getStorage fail");
+    })
+  },
+  formReset: function (e) {
+    this.setData({
+      ['storgeData.chooseDormitory']: "点击选择宿舍楼号",
+      ['storgeData.isChoosing']: false,
     })
   },
   bindPickerChange: function (e) {
@@ -84,21 +104,12 @@ Page({
         },
         method: "GET",
         success: (result) => {
+          // console.log(result);
           wx.hideLoading();
           // 成功请求后再处理id并显示宿舍数据
           let room = id.slice(-4)
           if (result.data.state == "OK") {
             this.handleDate() //查询成功获取时间 
-            this.setData({
-              ['storgeData.room']:room,
-              status:true,
-              // 控制卡片显示
-              ['userData.detail']: {
-                balance: result.data.data.balance,
-                // 如果余额不足则显示红色
-                isInsufficient: result.data.data.balance < 30 ? true : false
-              }
-            });
             if (result.data.data.balance < 30) {
               wx.showToast({
                 title: '余额不足30元,请及时充值',
@@ -106,7 +117,7 @@ Page({
                 icon: 'none'
               })
             }
-
+            this.saveUserData(room, result)
           } else {
             console.log(result);
             wx.showToast({
@@ -115,10 +126,10 @@ Page({
               duration: 1000,
             });
           }
-          this.saveData()
+          this.calcRatio()
+          this.saveStorgeData()
         },
         fail: (err) => {
-          this.saveData()
           console.log(err);
           wx.showToast({
             title: "请求失败，请检查网络",
@@ -134,7 +145,38 @@ Page({
       ['userData.time']: nowDate,
     })
   },
-  saveData: function () {
+  calcRatio: function () {
+    let res = this.data.userData.subsidy
+    let electricityRatio = (res.electricity / electricitySubsidy) * 100 + "%"
+    let hotRatio = (res.hotWater / hotSubsidy) * 100 + "%"
+    let coldRatio = (res.coldWater / coldSubsidy) * 100 + "%"
+    this.setData({
+      calcData: {
+        electricityRatio,
+        hotRatio,
+        coldRatio
+      }
+    })
+  },
+  saveUserData: function (room, result) {
+    this.setData({
+      ['storgeData.dormitory']: this.data.storgeData.chooseDormitory,
+      ['storgeData.room']: room,
+      status: true,
+      // 控制卡片显示
+      ['userData.detail']: {
+        balance: result.data.data.balance,
+        // 如果余额不足则显示红色
+        isInsufficient: result.data.data.balance < 30 ? true : false
+      },
+      ['userData.subsidy']: {
+        electricity: result.data.subsidy.electricity ? result.data.subsidy.electricity.toFixed(1) : 0,
+        hotWater: result.data.subsidy.hotWater ? result.data.subsidy.hotWater.toFixed(1) : 0,
+        coldWater: result.data.subsidy.coldWater ? result.data.subsidy.coldWater.toFixed(1) : 0,
+      }
+    });
+  },
+  saveStorgeData: function () {
     //存入缓存
     wx.setStorage({
       data: this.data.storgeData,

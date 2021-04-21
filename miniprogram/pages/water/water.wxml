@@ -29,7 +29,7 @@
     </view> -->
     <view class="result-container">
       <view class="result-main">
-        <view class="iconfont icon-lou room">宿舍号<view class="user-detail">{{storgeData.chooseDormitory}}-{{storgeData.room}}
+        <view class="iconfont icon-lou room">宿舍号<view class="user-detail">{{storgeData.dormitory}}-{{storgeData.room}}
           </view>
         </view>
         <view class="iconfont icon-yue- balance">余额<view
@@ -37,11 +37,26 @@
         </view>
       </view>
       <view class="bonus">
-        <view class="bonus-item">电力补贴<view class="price electricity">123度</view>
+        <view class="bonus-item">电力补贴
+          <view class="progress">
+            <view class="bar" style="background-color:rgb(255, 186, 38);width:{{calcData.electricityRatio}}"></view>
+            <text>{{calcData.electricityRatio}}</text>
+          </view>
+          <view class="electricity">{{userData.subsidy.electricity}}度</view>
         </view>
-        <view class="bonus-item">热水补贴<view class="price hot">345吨</view>
+        <view class="bonus-item">热水补贴
+          <view class="progress">
+            <view class="bar" style="background-color:rgb(255, 60, 42);width:{{calcData.hotRatio}}"></view>
+            <text>{{calcData.hotRatio}}</text>
+          </view>
+          <view class="hot">{{userData.subsidy.hotWater}}吨</view>
         </view>
-        <view class="bonus-item">冷水补贴<view class="price cold">456吨</view>
+        <view class="bonus-item">冷水补贴
+          <view class="progress">
+            <view class="bar" style="background-color:rgb(21, 193, 255);width:{{calcData.coldRatio}}"></view>
+            <text>{{calcData.coldRatio}}</text>
+          </view>
+          <view class="cold">{{userData.subsidy.coldWater}}吨</view>
         </view>
         <view class="bonus-item iconfont icon-shijianlishijilujishizhongbiaoxianxing search-time">数据截止至{{userData.time}}
         </view>

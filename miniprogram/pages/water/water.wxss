@@ -1,4 +1,5 @@
-/* miniprogram/pages/index.wxss */
+@import "./iconfont.wxss";
+
 page {
   background: rgb(245, 246, 250);
   padding-top: 85rpx;
@@ -246,11 +247,11 @@ picker .choice {
 }
 
 .result-main .balance .insufficient {
-
   color: rgb(240, 72, 72);
 }
 
 .bonus-item {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -260,28 +261,45 @@ picker .choice {
   color: rgba(0, 0, 0, 0.76);
 }
 
-.bonus-item .price {
-  width: 180rpx;
-  text-align: center;
-  height: 70rpx;
+.bonus-item .progress {
+  position: absolute;
+  left:30%;
   border-radius: 70rpx;
-  line-height: 70rpx;
+  width: 345rpx;
+  height: 38rpx;
   font-weight: 600;
+  overflow: hidden;
+  background-color: #ebeef5;
+}
+.progress .bar{
+  height: 100%;
+  width: 0;
+  transition: width 1s ease;
+}
+.progress text{
+  display: block;
+  position: absolute;
+  height:100%;
+  line-height: 38rpx;
+  color: rgba(27, 27, 27, 0.705);
+  font-size: 20rpx;
+  top:0;
+  left:50%;
+  transform:translateX(-50%)
 }
 
 .bonus-item .electricity {
   color: rgb(231, 168, 30);
-  background-color: rgb(252, 232, 174);
+  /* background-color: rgb(252, 232, 174); */
 }
 
 .bonus-item .hot {
   color: rgb(231, 61, 46);
-  background-color: rgb(255, 176, 170);
 }
 
 .bonus-item .cold {
   color: rgb(0, 172, 237);
-  background-color: rgb(183, 223, 241);
+  /*   background-color: rgb(183, 223, 241); */
 }
 
 .bonus .search-time {

@@ -43,7 +43,7 @@ Page({
       this.setData({
         totalNum: res.result.total
       })
-      console.log(this.data.totalNum);
+      // console.log(this.data.totalNum);
     })
   },
 
@@ -80,7 +80,7 @@ Page({
         this.setData({
           totalNum: res.result.total
         })
-        console.log(this.data.totalNum);
+        // console.log(this.data.totalNum);
       })
       // console.log(res.result.data);
       wx.hideLoading();

@@ -40,8 +40,9 @@ Page({
     })
   },
   onDesInputEvent: function (e) {
+    // let str = e.detail.value.split('\n').join('&hc')
     this.setData({
-      des: e.detail.value
+      des:  e.detail.value
     })
   },
   //选择图片

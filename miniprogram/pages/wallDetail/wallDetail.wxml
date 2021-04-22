@@ -5,12 +5,24 @@
     <view class="detail-title">{{msg.title}}</view>
     <view class="detail-date">发布时间：{{date}}</view>
     <view class="detail-tag">Tag：{{msg.tag}}</view>
-    <!-- <view class="fenge"></view> -->
-    <view class="detail-msg">{{msg.msg}}</view>
+    <text class="detail-msg">{{msg.msg}}</text>
     <view wx:if="{{msg.imgList[0]}}" class="reminder">滑动或点击查完完整图片</view>
     <scroll-view scroll-x="true" class="imgList">
       <image wx:for="{{msg.imgList}}" wx:key="this" mode="aspectFill" class="detail-img" data-src="{{item}}" src="{{item}}" bindtap="previewImage" />
     </scroll-view>
   </view>
 </view>
-<tabBar></tabBar>
+<!-- 评论 -->
+<view class="commentList">
+  <view class="commentItem" wx:for="{{commentList}}" wx:key="_id">
+    <text class="comment-msg" user-select="{{true}}" decode="{{true}}">{{item.msg}}</text> 
+    <view class="comment-info">{{item.time}}留言{{item.isHidden?'，为私密留言':''}}</view>
+  </view>
+</view>
+<!-- 评论输入框 -->
+<view class="addComment" style="bottom:{{keyboardHeight}}rpx">
+  <view class="addComment-form">
+    <textarea bindkeyboardheightchange="commentInputFocus" class="addComment-input" show-confirm-bar="{{false}}" fixed="{{true}}" adjust-position="{{false}}" cursor-spacing="60" auto-height="{{true}}" placeholder="请输入留言内容" bindinput="onDesInputEvent" value="{{des}}" />
+  </view>
+  <view class="addComment-btn" bind:tap="toAddComment">发送</view>
+</view>

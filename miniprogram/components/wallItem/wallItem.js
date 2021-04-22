@@ -14,7 +14,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    time:''
+    time:'',
+    msg:''
   },
   lifetimes: {
     attached: function() {
@@ -24,6 +25,7 @@ Component({
       date.setTime(this.properties.items.time);
       // console.log(date);
       let dateStr = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`
+      // let msg = this.properties.items.msg.split('&hc').join(' ');
       this.setData({
         time:dateStr
       })

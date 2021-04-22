@@ -10,7 +10,7 @@ page {
 	padding: 40rpx 40rpx;
 	margin: 0 auto;
 	margin-top: 30rpx;
-	margin-bottom: 150rpx;
+	margin-bottom: 30rpx;
 	background-color: white;
 	border-radius: 20rpx;
 	box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
@@ -68,4 +68,77 @@ page {
 
 .detail-img:last-child {
 	margin-right: 0rpx;
+}
+
+.addComment{
+	width: 750rpx;
+	/* min-height: 150rpx; */
+	background-color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-sizing: border-box;
+	padding: 30rpx;
+	box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
+	position: fixed;
+	bottom: 0rpx;
+}
+
+.addComment-form{
+	width: 520rpx;
+	border: #7688ba 1rpx solid;
+	border-radius: 20rpx;
+	box-sizing: border-box;
+	padding: 20rpx;
+}
+
+.addComment-input{
+	width: 100%;
+	min-height: 100rpx;
+}
+
+.addComment-btn{
+	width: 150rpx;
+	height: 100rpx;
+	text-align: center;
+	line-height: 100rpx;
+	border-radius: 20rpx;
+	background-color: #7688ba;
+  color: white;
+  font-size: 36rpx;
+  font-weight: 400;
+	box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.commentList{
+	box-shadow: 0rpx 0rpx 10rpx rgba(0, 0, 0, 0.1);
+	width: 750rpx;
+	background-color: white;
+	margin-bottom: 200rpx;
+}
+
+.commentItem{
+	width: 700rpx;
+	margin: 0 auto;
+	border-bottom: solid #b5b5b5 1rpx;
+	box-sizing: border-box;
+	padding: 20rpx;
+}
+
+.commentItem .comment-msg{
+	margin-bottom: 5rpx;
+	text-align:justify;
+}
+
+.commentItem .comment-info{
+	color: #b5b5b5;
+	font-size: 24rpx;
+}
+
+.commentItem:nth-last-of-type(1){
+	border-bottom:none
+}
+
+.comment-info{
+
 }

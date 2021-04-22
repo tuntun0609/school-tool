@@ -1,13 +1,13 @@
 {
   "pages": [
     "pages/index/index",  
+    "pages/wallDetail/wallDetail",
     "pages/user/user",
     "pages/water/water",  
     "pages/notice/notice",
     "pages/wall/wall",
     "pages/urlCopy/urlCopy", 
     "pages/sendFood/sendFood",
-    "pages/wallDetail/wallDetail",
     "pages/webview/webview",
     "pages/addItem/addItem",
     "pages/login/login",

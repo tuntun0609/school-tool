@@ -12,9 +12,9 @@ Page({
     let that = this;
     wx.cloud.callFunction({
       name:'login'
-    }).then(res => {
+    }).then(result => {
       // console.log(res);
-      app.globalData.openid = res.result.openid;
+      app.globalData.openid = result.result.openid;
     }).catch(err => {
       console.log(err);
     })
@@ -23,9 +23,18 @@ Page({
       success: (res) => {
         // console.log(res.userInfo);
         app.globalData.userInfo = res.userInfo;
-        wx.reLaunch({
-          url:`/pages/${that.options.toPage}/${that.options.toPage}`
-        })
+        if (that.options.toPage == 'wallDetail') {
+          // wx.redirectTo({
+          //   url:`/pages/wallDetail/wallDetail?id=${that.options.id}`
+          // })
+          wx.navigateBack({
+            delta: 1
+          })
+        }else{
+          wx.redirectTo({
+            url:`/pages/${that.options.toPage}/${that.options.toPage}`
+          })
+        }
         // console.log(app.globalData);
       },
       fail: (err)=> {

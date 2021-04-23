@@ -40,6 +40,7 @@
   "appid": "wx52d15a5ecf02c243",
   "projectname": "school-tool",
   "libVersion": "2.16.0",
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
   "condition": {
     "search": {
       "list": []

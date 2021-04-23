@@ -12,12 +12,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad:async function (options) {
-    await this.test1();
-    console.log(this.data.da);
-  },
-  test1:async function(){
-    this.setData({
-      da:'5446545'
+    // wx.cloud.callFunction({
+    //   name:'deleteCommentByItemId',
+    //   data:{
+    //     itemId:'b00064a7607a6f630ef4300803f21878'
+    //   }
+    // })
+    wx.showActionSheet({
+      itemList: ['A', 'B', 'C'],
+      success (res) {
+        console.log(res.tapIndex)
+      },
+      fail (res) {
+        console.log(res.errMsg)
+      }
     })
   },
   toMeituan:function(){

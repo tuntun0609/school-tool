@@ -120,13 +120,14 @@ page {
 .commentItem{
 	width: 700rpx;
 	margin: 0 auto;
-	border-bottom: solid #b5b5b5 1rpx;
+	border-bottom: solid rgba(150, 146, 146, 0.26) 1rpx;
 	box-sizing: border-box;
 	padding: 20rpx;
+	/* padding-bottom: 21rpx; */
 }
 
 .commentItem .comment-msg{
-	margin-bottom: 5rpx;
+	margin-bottom: 15rpx;
 	text-align:justify;
 }
 
@@ -137,8 +138,4 @@ page {
 
 .commentItem:nth-last-of-type(1){
 	border-bottom:none
-}
-
-.comment-info{
-
 }

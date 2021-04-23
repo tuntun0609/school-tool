@@ -1,22 +1,36 @@
 /* pages/notice/notice.wxss */
 page {
-	background-color: #f5f6fa;
+	background-color: white;
+}
+
+.notice-bg{
+  height: 150rpx;
+  background-color: #f5f6fa;
+  position: relative;
 }
 
 .notice-main{
   box-sizing: border-box;
   width: 750rpx;
-  height: 1200rpx;
   margin-top: 50rpx;
   padding: 50rpx;
+  padding-bottom: 0;
   background-color: white;
-  box-shadow: 0 0 10rpx 0rpx rgba(0, 0, 0, 0.3);
-  border-radius: 50rpx;
+  box-shadow: 0rpx -10rpx 10rpx 0rpx rgba(0, 0, 0, 0.1);
+  border-top-left-radius: 50rpx;
+  border-top-right-radius: 50rpx;
+  position: absolute;
+  bottom: 0;
 }
 
 .notice-title{
   text-align: center;
   font-size: 48rpx;
   color: #20366d;
-  margin-bottom: 30rpx;
+  /* margin-bottom: 30rpx; */
+}
+
+.richText{
+  background-color: white;
+  padding: 50rpx 50rpx 0rpx 50rpx;
 }

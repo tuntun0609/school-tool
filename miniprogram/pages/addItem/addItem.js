@@ -121,7 +121,7 @@ Page({
         addData: {
           openid: app.globalData.openid,
           title: that.data.title,
-          msg: that.data.des,
+          msg: that.data.des.trim(),
           tag: that.data.tags[that.data.index],
           imgList: that.data.cloudImgList,
           time: now

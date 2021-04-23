@@ -12,8 +12,8 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    this.setData({
+  onLoad:async function (options) {
+    await this.setData({
       openid: app.globalData.openid,
       userInfo: app.globalData.userInfo
     })
@@ -26,7 +26,7 @@ Page({
       this.setData({
         itemList: res.result.data
       })
-      console.log(res.result.data);
+      // console.log(res.result.data);
     }).catch(err => {
       console.log(err);
     })
@@ -44,7 +44,7 @@ Page({
   },
   deleteItem: function (e) {
     let that = this;
-    console.log(e);
+    // console.log(e);
     wx.showModal({
       title: '提示',
       content: '是否删除',
@@ -56,6 +56,14 @@ Page({
               id: e.target.dataset.id
             }
           }).then(res => {
+            wx.cloud.callFunction({
+              name:"deleteCommentByItemId",
+              data:{
+                itemId:e.target.dataset.id
+              }
+            }).then(res=>{
+              // console.log(res);
+            })
             let list = that.data.itemList;
             list.forEach((item,index) => {
               if (item._id == e.target.dataset.id) {

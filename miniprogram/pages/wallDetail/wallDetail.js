@@ -60,6 +60,7 @@ Page({
               isAll: true
             }
           }).then(res => {
+            // console.log(res);
             let msg = res.result.data;
             msg.forEach((item, index) => {
               let date = new Date();
@@ -196,16 +197,35 @@ Page({
       success(res) {
         if (res.confirm) {
           // console.log('用户点击确定')
-          that.upData({
-            itemId: params.itemId,
-            isHidden: true
+          wx.showModal({
+            title: '提示',
+            content: '确认留言',
+            success (res) {
+              if (res.confirm) {
+                that.upData({
+                  itemId: params.itemId,
+                  isHidden: true
+                })
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
+            }
           })
-
         } else if (res.cancel) {
           // console.log('用户点击取消')
-          that.upData({
-            itemId: params.itemId,
-            isHidden: false
+          wx.showModal({
+            title: '提示',
+            content: '确认留言？',
+            success (res) {
+              if (res.confirm) {
+                that.upData({
+                  itemId: params.itemId,
+                  isHidden: false
+                })
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
+            }
           })
         }
       }

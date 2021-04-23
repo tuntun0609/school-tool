@@ -68,7 +68,8 @@ Page({
       that.setData({
         tagNow: e.target.dataset.tag,
         itemList: res.result.data,
-        title: e.target.dataset.tag
+        title: e.target.dataset.tag,
+        skipNum: 0
       })
       wx.cloud.callFunction({
         name: 'getItemTotalNumByTag',
@@ -103,7 +104,7 @@ Page({
         }
       }).then(res => {
         this.setData({
-          list: res.result.data,
+          itemList: res.result.data,
           skipNum: this.data.skipNum - 20
         })
         wx.hideLoading();
@@ -135,8 +136,9 @@ Page({
           skipNum: this.data.skipNum + 20
         }
       }).then(res => {
+        // console.log(res.result.data);
         this.setData({
-          list: res.result.data,
+          itemList: res.result.data,
           skipNum: this.data.skipNum + 20
         })
         wx.hideLoading();

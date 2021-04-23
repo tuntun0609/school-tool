@@ -1,14 +1,14 @@
 {
   "pages": [
     "pages/index/index",  
+    "pages/notice/notice",
+    "pages/webview/webview",
     "pages/wallDetail/wallDetail",
     "pages/user/user",
     "pages/water/water",  
-    "pages/notice/notice",
     "pages/wall/wall",
     "pages/urlCopy/urlCopy", 
     "pages/sendFood/sendFood",
-    "pages/webview/webview",
     "pages/addItem/addItem",
     "pages/login/login",
     "pages/foodDes/foodDes"

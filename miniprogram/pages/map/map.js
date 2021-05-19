@@ -1,46 +1,20 @@
-// pages/urlCopy/urlCopy.js
+// pages/map/map.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    url:''
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (options.option) {
-      wx.cloud.callFunction({
-        name: 'getUrlByTag',
-        data:{
-          tag:options.option
-        }
-      }).then(res => {
-        this.setData({
-          url: res.result.data[0].url
-        })
-        // console.log(res.result.data);
-      }).catch(err => {
-        console.log(err);
-        wx.hideLoading();
-      })
-    }
+
   },
-  copyUrl:function(){
-    wx.setClipboardData({
-      data: this.data.url,
-      success(res){
-        wx.showToast({
-          title: '复制成功',
-          icon: 'none',
-          duration: 1000
-        })
-      }
-    })
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

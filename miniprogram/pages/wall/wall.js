@@ -1,4 +1,5 @@
 // pages/wall/wall.js
+const app = getApp();
 Page({
 
   /**
@@ -8,7 +9,9 @@ Page({
     tagNow: '失物招领',
     title: '失物招领',
     itemList: [],
-    skipNum: 0
+    skipNum: 0,
+    x:350,
+    y:800
   },
 
   /**
@@ -158,6 +161,19 @@ Page({
       })
     }
 
+  },
+  addItem:function(){
+    console.log("add");
+    if (!app.globalData.userInfo){
+      wx.navigateTo({
+        url:'/pages/login/login?toPage=wall'
+      })
+    }else{
+      wx.navigateTo({
+        url:'/pages/addItem/addItem?backPage=wall'
+      })
+    }
+    
   },
   /**
    * 生命周期函数--监听页面显示

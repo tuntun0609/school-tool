@@ -1,8 +1,9 @@
 {
   "pages": [
     "pages/index/index",  
-    "pages/notice/notice",
     "pages/webview/webview",
+    "pages/map/map",
+    "pages/notice/notice",
     "pages/wallDetail/wallDetail",
     "pages/user/user",
     "pages/water/water",  

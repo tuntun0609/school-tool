@@ -30,6 +30,10 @@ Page({
           wx.navigateBack({
             delta: 1
           })
+        }else if (that.options.toPage == 'wall') {
+          wx.redirectTo({
+            url:`/pages/addItem/addItem?backPage=wall`
+          })
         }else{
           wx.redirectTo({
             url:`/pages/${that.options.toPage}/${that.options.toPage}`

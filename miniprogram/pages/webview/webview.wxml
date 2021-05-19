@@ -1,6 +1,6 @@
 <!--pages/webview/webview.wxml-->
 <!-- <web-view src="http://www.baidu.com" /> -->
-<navigator
+<!-- <navigator
   target="miniProgram"
   open-type="navigate"
   app-id="wx2c348cf579062e56" 
@@ -9,4 +9,4 @@
 
   <button bindtap="toMeituan">123465798</button>
   <!-- "navigationStyle": "custom" -->
-<tabBar></tabBar>
+<!-- <tabBar></tabBar> --> -->

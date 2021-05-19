@@ -27,9 +27,9 @@ Page({
     },
     calcData: {
       //剩余占比
-      electricityRatio: 0,
-      hotRatio: 0,
-      coldRatio: 0
+      electricityRatio: '',
+      hotRatio: '',
+      coldRatio: ''
     }
   },
   onLoad() {
@@ -61,7 +61,7 @@ Page({
     this.handleData(room);
   },
   handleData: function (room) {
-    let roomRule = /^\d{3,4}$/ //3,4位数字
+    let roomRule = /^\d{2,4}A?$/ //3,4位数字，或匹配一个或零个A
     if (room.length == 0) {
       wx.showToast({
         title: "房号不能为空！",
@@ -104,7 +104,6 @@ Page({
         },
         method: "GET",
         success: (result) => {
-          // console.log(result);
           wx.hideLoading();
           // 成功请求后再处理id并显示宿舍数据
           let room = id.slice(-4)
@@ -119,7 +118,7 @@ Page({
             }
             this.saveUserData(room, result)
           } else {
-            console.log(result);
+
             wx.showToast({
               title: "查询失败，该宿舍号不存在",
               icon: "none",
@@ -147,9 +146,9 @@ Page({
   },
   calcRatio: function () {
     let res = this.data.userData.subsidy
-    let electricityRatio = (res.electricity / electricitySubsidy) * 100 + "%"
-    let hotRatio = (res.hotWater / hotSubsidy) * 100 + "%"
-    let coldRatio = (res.coldWater / coldSubsidy) * 100 + "%"
+    let electricityRatio = ((res.electricity / electricitySubsidy) * 100).toFixed(2) + "%"
+    let hotRatio = ((res.hotWater / hotSubsidy) * 100).toFixed(2) + "%"
+    let coldRatio = ((res.coldWater / coldSubsidy) * 100).toFixed(2) + "%"
     this.setData({
       calcData: {
         electricityRatio,

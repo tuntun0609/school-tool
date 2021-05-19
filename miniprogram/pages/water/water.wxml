@@ -9,8 +9,8 @@
           <text class="{{storgeData.isChoosing?'choice':''}}">{{storgeData.chooseDormitory}}</text>
         </view>
       </picker>
-      <input class="iconfont icon-men" value="{{storgeData.room}}" type="number" name="room" id="room"
-        placeholder-class="place-holder" placeholder="输入房间号，如201或1001"></input>
+      <input class="iconfont icon-men" value="{{storgeData.room}}" type="text" name="room" id="room"
+        placeholder-class="place-holder" placeholder="输入房间号，如301/1001/30A"></input>
       <view class="button-wrap">
         <button class="reset-btn" form-type="reset">
           <text class="reset iconfont icon-reset"></text>

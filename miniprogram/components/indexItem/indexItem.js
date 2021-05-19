@@ -16,7 +16,7 @@ Component({
       type: String,
       value: ""
     },
-    options: {
+    option: {
       type: String,
       value: ""
     },
@@ -34,17 +34,17 @@ Component({
    */
   methods: {
     toPage: function () {
-      // console.log(this.properties.pageTo);
+      console.log(this.properties.option);
       if (this.properties.pageTo) {
         let page = this.properties.pageTo;
-        if (!this.properties.options) {
+        if (!this.properties.option) {
           wx.navigateTo({
             url: `/pages/${page}/${page}`
           })
           // console.log('wu');
         } else {
           wx.navigateTo({
-            url: `/pages/${page}/${page}?options=${this.properties.options}`
+            url: `/pages/${page}/${page}?option=${this.properties.option}`
           })
           // console.log('you');
         }

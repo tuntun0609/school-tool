@@ -100,7 +100,7 @@ page {
 }
 
 picker,
-input[type="number"] {
+input[type="text"] {
   position: relative;
   border-radius: 20rpx;
   height: 80rpx;
@@ -112,7 +112,7 @@ input[type="number"] {
 }
 
 .choseQuestion::before,
-input[type="number"]::before {
+input[type="text"]::before {
   position: absolute;
   left: 20rpx;
   top: 50%;

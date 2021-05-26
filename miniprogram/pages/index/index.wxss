@@ -19,7 +19,7 @@ swiper{
   border-radius: 20rpx;
 }
 
-swiper-item{
+.index-swiper swiper-item{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,4 +35,135 @@ swiper-item{
   margin-top: 50rpx;
   display: flex;
   justify-content: space-between;
+}
+
+.index-list:last-child{
+  margin-bottom: 50rpx;
+}
+
+.news-main{
+  background-color: white;
+  width: 700rpx;
+  height: 100rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  margin-bottom: 150rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.news-swiper{
+  height: 100rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.news-swiper .news-swiperItem{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.news-swiperItem .news-img{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+}
+
+.news-swiperItem .news-text{
+  width: 570rpx;
+  font-size: 24rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.indexList1{
+  width: 690rpx;
+  height: 330rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.indexList1 .list-left{
+  width: 330rpx;
+  height: 330rpx;
+  background-color: white;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.list-left image{
+  width: 330rpx;
+  height: 330rpx;
+}
+
+.indexList1 .list-right{
+  width: 330rpx;
+  height: 330rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.list-right .right-top{
+  width: 330rpx;
+  height: 150rpx;
+  background-color: white;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
+  border-radius: 20rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+
+.right-top .schedule{
+  width: 290rpx;
+  height: 110rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+  border: solid 2rpx #c5c5c5;
+  position: relative;
+}
+
+.schedule .msg{
+  width: 290rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.schedule .schedule-content{
+  width: 290rpx;
+  height: 110rpx;
+  background-color: #2ecc71;
+  transition: 1s;
+}
+
+.list-right .right-bottom{
+  width: 330rpx;
+  height: 150rpx;
+  background-color: white;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
+  border-radius: 20rpx;
+}
+
+.index-title{
+  height: 50rpx;
+  margin-left: 25rpx;
+  margin-top: 30rpx;
+  border-left: solid 5rpx #b886fa;
+  padding-left: 20rpx;
+  line-height: 50rpx;
 }

@@ -39,6 +39,7 @@ Component({
    */
   methods: {
     getWallDetail:function(e){
+      console.log(e)
       let item = this.properties.items;
       wx.navigateTo({
         url:`/pages/wallDetail/wallDetail?id=${item._id}`

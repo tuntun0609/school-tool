@@ -33,7 +33,7 @@ page{
   height: 100rpx;
   line-height: 50rpx;
   margin-top: 30rpx;
-  margin-bottom: 120rpx;
+  /* margin-bottom: 120rpx; */
   display: flex;
   justify-content: space-between;
   align-items: center;

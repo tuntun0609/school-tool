@@ -18,7 +18,7 @@
     "backgroundColor": "#f5f6fa",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#f5f6fa",
-    "navigationBarTitleText": "JNU校园工具箱",
+    "navigationBarTitleText": "南校万事屋",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
@@ -27,6 +27,7 @@
     "tabBar":"/components/tabBar/tabBar"
   },
   "navigateToMiniProgramAppIdList":[
-    "wx2c348cf579062e56"
+    "wx2c348cf579062e56",
+    "wx8bbe27b496f888c0"
   ]
 }

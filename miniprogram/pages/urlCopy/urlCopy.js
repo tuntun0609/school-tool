@@ -13,6 +13,9 @@ Page({
    */
   onLoad: function (options) {
     if (options.option) {
+      wx.showLoading({
+        title: '正在加载中...',
+      })
       wx.cloud.callFunction({
         name: 'getUrlByTag',
         data:{
@@ -22,6 +25,7 @@ Page({
         this.setData({
           url: res.result.data[0].url
         })
+        wx.hideLoading();
         // console.log(res.result.data);
       }).catch(err => {
         console.log(err);

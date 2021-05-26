@@ -1,5 +1,5 @@
 <!-- components/wallItem/wallItem.wxml -->
-<view class="wall-item" bindtap="getWallDetail">
+<view class="wall-item" bind:tap="getWallDetail">
   <view class="wall-item-title">
     <view class="wall-item-title-text">{{items.title}}</view>
     <view class="wall-item-title-time">{{time}}</view>

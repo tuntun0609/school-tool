@@ -4,4 +4,4 @@
 
 <view class="urlCopyUrl" bindtap="copyUrl">点 击 复 制</view>
 
-<tabBar></tabBar>
+<!-- <tabBar></tabBar> -->

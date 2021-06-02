@@ -167,10 +167,12 @@ Page({
     if (!app.globalData.userInfo){
       wx.navigateTo({
         url:'/pages/login/login?toPage=wall'
+        // url: "/pages/warn/warn"
       })
     }else{
       wx.navigateTo({
         url:'/pages/addItem/addItem?backPage=wall'
+        // url: "/pages/warn/warn"
       })
     }
     

@@ -18,11 +18,11 @@
     <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/水电.png" pageTo="water" msg="水电查询"></indexItem>
     <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/图书馆.png" msg="图书馆" pageTo="urlCopy" option="图书馆"></indexItem>
     <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/外卖.png" msg="外卖推荐" pageTo="sendFood"></indexItem>
-    <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/校历.png" msg="校历"></indexItem>
+    <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/校历.png" msg="校历" pageTo="xiaoli"></indexItem>
   </view>
   <!-- 第二行 -->
   <view class="index-list">
-    <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/地图.png" msg="地图"></indexItem>
+    <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/地图.png" msg="地图" pageTo="map"></indexItem>
     <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/墙.png" msg="讨论墙" pageTo="wall"></indexItem>
     <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/宣传.png" msg="宣传申请" pageTo="urlCopy" option='宣传申请'></indexItem>
     <indexItem imgUrl="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/icon/场地预约.png" msg="场地预约" pageTo="urlCopy" option='场地预约'></indexItem>
@@ -41,7 +41,9 @@
         <view class="schedule-content" style="width:{{scheduleP}}rpx"></view>
       </view>
     </view>
-    <view class="right-bottom"></view>
+    <view class="right-bottom">
+      <image bindtap="toNotice" src="cloud://test-4gbjp6opfa0ad4c1.7465-test-4gbjp6opfa0ad4c1-1304984739/banner/谷雨小清新插画公众号封面.png" />
+    </view>
   </view>
 </view>
 

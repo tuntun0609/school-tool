@@ -1,6 +1,8 @@
 {
   "pages": [
-    "pages/index/index",  
+    "pages/index/index",
+    "pages/warn/warn",  
+    "pages/xiaoli/xiaoli", 
     "pages/webview/webview",
     "pages/map/map",
     "pages/notice/notice",
@@ -29,5 +31,10 @@
   "navigateToMiniProgramAppIdList":[
     "wx2c348cf579062e56",
     "wx8bbe27b496f888c0"
-  ]
+  ],
+  "permission": {
+    "scope.userLocation": {
+    "desc": "你的位置信息将用于导航"
+    }
+  }
 }

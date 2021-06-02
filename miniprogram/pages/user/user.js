@@ -35,6 +35,7 @@ Page({
     if (app.globalData.userInfo) {
       wx.navigateTo({
         url: "/pages/addItem/addItem"
+        // url: "/pages/warn/warn"
       })
     } else {
       wx.navigateTo({

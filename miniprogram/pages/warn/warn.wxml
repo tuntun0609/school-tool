@@ -1,0 +1,6 @@
+<!--pages/warn/warn.wxml-->
+<view class="warn-main">
+  <icon class="icon-box-img" type="info" size="100"></icon>
+  <view class="warn-msg">非常抱歉，本功能暂时关闭</view>
+  <view class="warn-msg">请期待后续更新哦 :)</view>
+</view>

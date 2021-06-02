@@ -20,9 +20,9 @@
   </view>
 </view>
 <!-- 评论输入框 -->
-<view class="addComment" style="bottom:{{keyboardHeight}}rpx">
+<view class="addComment" style="bottom:{{keyboardHeight}}rpx" >
   <view class="addComment-form">
-    <textarea bindkeyboardheightchange="commentInputFocus" class="addComment-input" show-confirm-bar="{{false}}" fixed="{{true}}" adjust-position="{{false}}" cursor-spacing="60" auto-height="{{true}}" placeholder="请输入留言内容" bindinput="onDesInputEvent" value="{{des}}" />
+    <textarea bindfocus="commentInputFocus" class="addComment-input" show-confirm-bar="{{false}}" fixed="{{true}}" adjust-position="{{false}}" cursor-spacing="60" auto-height="{{true}}" placeholder="请输入留言内容" bindinput="onDesInputEvent" value="{{des}}" bindblur="lostFocus"/>
   </view>
   <view class="addComment-btn" bind:tap="toAddComment">发送</view>
 </view>

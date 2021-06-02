@@ -1,2 +1,95 @@
 <!--pages/map/map.wxml-->
-<text>pages/map/map.wxml</text>
+<view wx:if="{{!navigating}}" class="searchBar">
+   <input type="text" placeholder="请输入校内地名" value="{{searchText}}" bindinput="siteInput">
+   </input>
+   <view class="submit iconfont icon-sousuo" bindtap="search"></view>
+</view>
+<map id="myMap" style="height:{{map.height}}" markers="{{map.markers}}" latitude="{{map.location.latitude}}"
+   show-location="true" show-compass="true" longitude="{{map.location.longitude}}" scale="{{map.scaleNum}}"
+   bindmarkertap="markertap" polyline="{{polyline}}">
+</map>
+<view class="location">
+   <!-- 定位点 -->
+   <view class="getLocation iconfont icon-Gpsnavigationlocation" bindtap="getLocation" style="color:#2f94f1"></view>
+</view>
+<view wx:if="{{!navigating}}" class="footer">
+   <!-- 分类栏 -->
+   <view class="wrap">
+      <view class="item" data-type="food" bindtap="getSite">
+         <view class="circle iconfont icon-shitang" style="background:#ffb142;"></view>美食
+      </view>
+      <view class="item" data-type="sport" bindtap="getSite">
+         <view class="circle iconfont icon-lanqiu" style="background:#2ed573;"></view>运动
+      </view>
+      <view class="item" data-type="dormitory" bindtap="getSite">
+         <view class="circle iconfont icon-ziyuan" style="background:#00cec9;"></view>宿舍
+      </view>
+      <view class="item" data-type="study" bindtap="getSite">
+         <view class="circle iconfont icon-thin-_book_writi" style="background:#1e90ff;"></view>学习
+      </view>
+      <view class="item" data-type="market" bindtap="getSite">
+         <view class="circle iconfont icon-chaoshi" style="background:#ffb8b8;"></view>超市
+      </view>
+      <view class="item" data-type="office" bindtap="getSite">
+         <view class="circle iconfont icon-bangong" style="background:#60a3bc;"></view>办公
+      </view>
+      <view class="item" data-type="traffic" bindtap="getSite">
+         <view class="circle iconfont icon-cheliang" style="background:#7d5fff;"></view>出行
+      </view>
+
+      <view class="item" data-type="express" bindtap="getSite">
+         <view class="circle iconfont icon-kuaidiwuliu" style="background:#FD7272"></view>快递
+      </view>
+   </view>
+</view>
+<view wx:if="{{navigating}}"
+   class="choose {{navigating?'animation-slide-left':''}}  {{waiting?'animation-slide-right':''}}">
+   <!-- 右侧导航条 -->
+   <view class="chooseItem {{activeItem=='walking'?'active':''}}" bindtap="getChoice" data-way="walking">
+      <view class="iconfont icon-buhang"></view>步行
+   </view>
+   <view class="chooseItem {{activeItem=='driving'?'active':''}}" bindtap="getChoice" data-way="driving">
+      <view class="iconfont icon-jiache"></view> 驾车
+   </view>
+   <view class="chooseItem {{activeItem=='bicycling'?'active':''}}" bindtap="getChoice" data-way="bicycling">
+      <view class="iconfont icon-131-zihangche"></view>骑车
+   </view>
+   <view class="chooseItem" bindtap="cancelNavigating">
+      <view class="iconfont icon-tuichu "></view>退出导航
+   </view>
+</view>
+
+<view wx:if="{{showList}}" class="slideWindow animation-slide-bottom {{navigating?'animation-slide-back':''}}"
+   catchtouchmove='filterViewMove'>
+   <!-- 清单栏 -->
+   <view class="cancel iconfont icon-cancel" bindtap="closeWindow"></view>
+   <view class="listContainer" wx:if="{{list.length!=0}}">
+      <scroll-view scroll-y style="height: 45vh;">
+         <view wx:for="{{list}}" wx:key="id" class="listItem">
+            <view class="imgContainer">'
+               <image class="image" src="{{item.pic}}" mode='widthFix' style="width:100%"></image>
+            </view>
+            <view class="detailContainer">
+               <view class="name">{{item.name}}</view>
+               <view class="introduction">简介：{{item.introduction}}</view>
+            </view>
+            <view class="goContainer" bindtap="goByWalk" data-index="{{item.id}}">
+               <view class="go iconfont icon-navigation"></view>
+               <view>到这去</view>
+            </view>
+         </view>
+      </scroll-view>
+   </view>
+   <view class="noList" wx:else>
+      <view class="imgContainer"></view>
+      <view class="tips">抱歉，暂无结果</view>
+      <view class="feedback">去反馈</view>
+   </view>
+</view>
+<modal title='导航' hidden="{{modalHidden}}" bindcancel='modalCancel' bindconfirm='modalConfirm'>
+   <view>
+      <!-- 负责填充地点图片 -->
+      <image class="image" src="{{map.moveTo.image}}" mode='aspectFill' style="width:100%"></image>
+   </view>
+   <view style=" text-align: center;">是否需要前往{{map.moveTo.name}}</view>
+</modal>

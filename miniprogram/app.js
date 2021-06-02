@@ -13,6 +13,7 @@ App({
         traceUser: true,
       })
     }
+    
 
     this.globalData = {
       // openid: "oV9Sv4rxRwpKQEFreVWA-e4blV8w",

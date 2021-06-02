@@ -1,0 +1,12 @@
+/* pages/xiaoli/xiaoli.wxss */
+page {
+	height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img{
+  width: 750rpx;
+  height: 750rpx;
+}

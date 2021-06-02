@@ -157,6 +157,12 @@ swiper{
   background-color: white;
   box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
   border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.right-bottom image{
+  width: 330rpx;
+  height: 150rpx;
 }
 
 .index-title{

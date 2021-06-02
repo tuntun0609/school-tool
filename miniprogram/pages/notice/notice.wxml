@@ -7,4 +7,4 @@
 <view class="richText">
   <rich-text nodes="{{text}}"></rich-text>
 </view>
-<tabBar></tabBar>
+<!-- <tabBar></tabBar> -->

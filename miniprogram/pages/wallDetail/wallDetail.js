@@ -134,10 +134,10 @@ Page({
   },
   //输入框上移
   commentInputFocus: function (e) {
-    // console.log(e.detail.height);
+    console.log(e.detail.height);
     if (e.detail.height) {
       this.setData({
-        keyboardHeight: e.detail.height * 2 + 28
+        keyboardHeight: e.detail.height * 2
       })
     } else {
       this.setData({
@@ -145,6 +145,11 @@ Page({
       })
     }
 
+  },
+  lostFocus:function(e) {
+    this.setData({
+      keyboardHeight: 0
+    })
   },
   //上传数据
   upData: function (params) {
